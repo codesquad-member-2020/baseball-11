@@ -3,12 +3,14 @@ import styled from 'styled-components';
 
 import { teamData } from '../../mock/mock';
 
-const SelectBoxWrap = styled.div`
+const SelectWrap = styled.div`
     width : 100%;
     height : 100%;
+    background : url('/images/ground.jpg') no-repeat;
+    background-size : 100% 100%;
 `;
 
-const SelectBoxInner = styled.div`
+const SelectInner = styled.div`
     width : 100%;
     height : 100%;
     display : flex;
@@ -19,10 +21,25 @@ const SelectBoxInner = styled.div`
 `;
 
 const Title = styled.div`
-    color : #fff;
     font-size : 50px;
     font-weight : 600;
-    margin-bottom : 80px;;
+    margin-bottom : 80px;
+    perspective: 400px;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
+    -webkit-background-clip: text;
+    color: transparent;
+    animation-name: bingle;
+    animation-duration: ${props => (props.time)};
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+    @keyframes bingle{
+        to{
+            transform: rotate3d(0,1,0,360deg);
+        }
+    }
+    &:hover {
+        transform : scale(1.5);
+    }
 `;
 
 const StateText = styled.div`
@@ -45,7 +62,7 @@ const Game = styled.div`
     justify-content : space-around;
     align-items : center;
     & .team-name {
-        font-size : 25px;
+        font-size : 22px;
         cursor: pointer;
         &:hover {
             color : #f00;
@@ -57,11 +74,18 @@ const Game = styled.div`
             width : 50%;
         }
     }
+    & .game-id {
+        position : absolute;
+        top : 10%;
+        left : 50%;
+        transform : translateX(-50%);
+        font-size : 15px;
+    }
     & .vs {
         position : absolute;
         top : 50%;
         left : 50%;
-        transform : translate(-50%, -50%);
+        transform : translateX(-50%);
         font-size : 18px;
     }
 `;
@@ -80,26 +104,28 @@ const Select = () => {
         return (
             <Game key={game.id}>
                 <div className='team-name away'>
-                    <span className=''>{game.away}</span>
+                    <span>{game.away.teamName}</span>
                 </div>
+                <span className='game-id'>GAME {game.id}</span>
                 <span className='vs'>VS</span>
                 <div className='team-name home'>
-                    <span className=''>{game.home}</span>
+                    <span>{game.home.teamName}</span>
                 </div>
             </Game>
         )
     });
 
     return (
-        <SelectBoxWrap>
-            <SelectBoxInner>
-                <Title>신나는 야구게임 ^.^</Title>
+        <SelectWrap>
+            <SelectInner>
+                <Title time={'2s'}>첫충 50,000원</Title>
+                <Title time={'4s'}>게임 선택 ^.^</Title>
                 <StateText>참가할 게임을 선택하세요!</StateText>
                 <SelectBox>
                     {gameList}
                 </SelectBox>
-            </SelectBoxInner>
-        </SelectBoxWrap>
+            </SelectInner>
+        </SelectWrap>
     )
 }
 

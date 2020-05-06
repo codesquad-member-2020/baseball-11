@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components'
 import { reset } from 'styled-reset'
+import Main from './components/main/Main';
+import Match from './components/match/Match';
 import Select from './components/select/Select';
 
 const GlobalStyle = createGlobalStyle`
@@ -26,7 +28,8 @@ function App() {
     <Router>
       <GlobalStyle />
       <Switch>
-        <Route exact path='/select' component={Select} />
+        <Route path='/select' component={Select} />
+        <Route path='/' component={Main} />
       </Switch>
     </Router>
   );
