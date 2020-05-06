@@ -97,8 +97,6 @@ const SelectBox = styled.div`
     }
 `;
 
-const audio = { sound: sportsBGM };
-
 const Select = () => {
     Howler.volume(1.0);
     let sound;
@@ -136,7 +134,7 @@ const Select = () => {
                 <SelectBox>
                     {gameList}
                 </SelectBox>
-                {soundPlay(audio.sound)}
+                {soundPlay(sportsBGM)}
             </SelectInner>
         </SelectWrap>
     )
