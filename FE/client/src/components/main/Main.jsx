@@ -16,7 +16,7 @@ const Title = styled.div`
     color : #fff;
     font-size : 80px;
     font-weight : 600;
-    margin-bottom : 80px;;
+    margin-bottom : 80px;
 `;
 
 const Main = () => {
@@ -24,7 +24,7 @@ const Main = () => {
         <MainWrap>
             <Title>신나는 야구 게임 ~.~</Title>
             <NavLink to='/select'>
-                <button style={{ width: '100px', height: '50px' }}>게임선택</button>
+                <button style={{ width: '100px', height: '50px' }}>로그인</button>
             </NavLink>
         </MainWrap>
     )

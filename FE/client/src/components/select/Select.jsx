@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
+import { Howl, Howler } from 'howler';
+import sportsBGM from '../../audios/sports.mp3';
 
 import { teamData } from '../../mock/mock';
 
@@ -29,7 +31,7 @@ const Title = styled.div`
     -webkit-background-clip: text;
     color: transparent;
     animation-name: bingle;
-    animation-duration: ${props => (props.time)};
+    animation-duration: ${props => (props.duration)};
     animation-timing-function:linear;
     animation-iteration-count: infinite;
     @keyframes bingle{
@@ -38,6 +40,7 @@ const Title = styled.div`
         }
     }
     &:hover {
+        animation-name: none;
         transform : scale(1.5);
     }
 `;
@@ -63,15 +66,10 @@ const Game = styled.div`
     align-items : center;
     & .team-name {
         font-size : 22px;
+        width : 50%;
         cursor: pointer;
         &:hover {
             color : #f00;
-        }
-        &.away {
-            width : 50%;
-        }
-        &.home {
-            width : 50%;
         }
     }
     & .game-id {
@@ -99,7 +97,21 @@ const SelectBox = styled.div`
     }
 `;
 
+const audio = { sound: sportsBGM };
+
 const Select = () => {
+    Howler.volume(1.0);
+    let sound;
+    const soundStop = () => sound.stop();
+    const soundPlay = (src) => {
+        sound = new Howl({ src });
+        sound.play();
+    }
+
+    useEffect(() => {
+        return soundStop;
+    })
+
     const gameList = teamData.map(game => {
         return (
             <Game key={game.id}>
@@ -118,12 +130,13 @@ const Select = () => {
     return (
         <SelectWrap>
             <SelectInner>
-                <Title time={'2s'}>첫충 50,000원</Title>
-                <Title time={'4s'}>게임 선택 ^.^</Title>
+                <Title duration={'6s'}>행복한 하루 되세요</Title>
+                <Title duration={'3s'}>게임 선택 ^.^</Title>
                 <StateText>참가할 게임을 선택하세요!</StateText>
                 <SelectBox>
                     {gameList}
                 </SelectBox>
+                {soundPlay(audio.sound)}
             </SelectInner>
         </SelectWrap>
     )
