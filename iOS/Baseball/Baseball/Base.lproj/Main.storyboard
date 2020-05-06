@@ -21,6 +21,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="lz3-Ps-Bta" secondAttribute="width" multiplier="1:1.2" id="z4v-IS-ur4"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="patternImage" value="grass"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -94,6 +97,7 @@
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
+        <image name="grass" width="24.5" height="12"/>
         <image name="play" catalog="system" width="120" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
     </resources>

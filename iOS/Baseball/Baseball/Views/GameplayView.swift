@@ -10,13 +10,23 @@ import UIKit
 
 @IBDesignable
 class GameplayView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    @IBInspectable var patternImage: UIImage? = nil {
+        didSet { configureView() }
     }
-    */
-
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureView()
+    }
+    
+    private func configureView() {
+        guard let pattern = patternImage else { return }
+        backgroundColor = UIColor(patternImage: pattern)
+    }
 }
