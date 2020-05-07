@@ -5,23 +5,26 @@ import styled from 'styled-components';
 const Wrap = styled.div`
     width : 100%;
     height : 100%;
+    background : url('/images/bonobono.jpg') no-repeat;
+    background-size : 100% 100%;
     display : flex;
     align-items : center;
     justify-content : center;
 `;
 
 const Title = styled.div`
+    font-family: "ChosunGs";
     font-size : 55px;
     font-weight : 600;
     margin-bottom : 80px;
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
+    background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);   
     -webkit-background-clip: text;
     color: transparent;
 `;
 
 const NotFound = () => {
     const [wait, setWait] = useState(true);
-    setTimeout(() => setWait(false), 5000);
+    setTimeout(() => setWait(false), 4000);
 
     return (
         <Wrap>

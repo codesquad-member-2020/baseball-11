@@ -24,7 +24,7 @@ const MainInner = styled.div`
 `;
 
 const Title = styled.div`
-    color : #fff;
+    font-family: "ChosunGs";
     font-size : 80px;
     font-weight : 600;
     margin-bottom : 80px;

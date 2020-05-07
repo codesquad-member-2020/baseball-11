@@ -22,6 +22,7 @@ const SelectInner = styled.div`
 `;
 
 const Title = styled.div`
+    font-family: "ChosunGs";
     font-size : 50px;
     font-weight : 600;
     margin-bottom : 80px;
