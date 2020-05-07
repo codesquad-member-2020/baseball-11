@@ -15,8 +15,6 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     width : 100%;
     height: 100vh;
-    background : url('/images/main-background.jpg') no-repeat;
-    background-size : 100% 100%;
   }
   #root {
     height : 100%;

@@ -25,7 +25,6 @@ const Title = styled.div`
     font-size : 50px;
     font-weight : 600;
     margin-bottom : 80px;
-    perspective: 400px;
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
     -webkit-background-clip: text;
     color: transparent;
@@ -34,9 +33,7 @@ const Title = styled.div`
     animation-timing-function:linear;
     animation-iteration-count: infinite;
     @keyframes bingle{
-        to{
-            transform: rotate3d(0,1,0,360deg);
-        }
+        to { transform: rotate3d(0,1,0,360deg) }
     }
     &:hover {
         animation-name: none;
