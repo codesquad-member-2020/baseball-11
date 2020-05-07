@@ -10,6 +10,10 @@ const MainWrap = styled.div`
     justify-content : center;
     align-items : center;
     background-color : #00000099;
+    & .login-btn {
+        width: 100px; 
+        height: 50px;
+    }
 `;
 
 const Title = styled.div`
@@ -24,7 +28,7 @@ const Main = () => {
         <MainWrap>
             <Title>신나는 야구 게임 ~.~</Title>
             <NavLink to='/select'>
-                <button style={{ width: '100px', height: '50px' }}>로그인</button>
+                <button className='login-btn'>로그인</button>
             </NavLink>
         </MainWrap>
     )
