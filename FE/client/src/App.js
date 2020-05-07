@@ -29,6 +29,7 @@ function App() {
       <GlobalStyle />
       <Switch>
         <Route path='/select' component={Select} />
+        <Route path='/match' component={Match} />
         <Route path='/' component={Main} />
       </Switch>
     </Router>
