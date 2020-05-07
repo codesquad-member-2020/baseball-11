@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
-import styled from 'styled-components';
 import { Howl, Howler } from 'howler';
+import styled from 'styled-components';
+import Games from './Games';
 import sportsBGM from '../../audios/sports.mp3';
-
-import { teamData } from '../../mock/mock';
 
 const SelectWrap = styled.div`
     width : 100%;
@@ -52,42 +51,6 @@ const StateText = styled.div`
     margin-bottom : 20px;
 `;
 
-const Game = styled.div`
-    position : relative;
-    width : 100%;
-    height : 80px;
-    background-color : #ffffff80;
-    border-radius : 10px;
-    margin-bottom : 10px;
-    text-align : center;
-    font-weight : 600;
-    display : flex;
-    justify-content : space-around;
-    align-items : center;
-    & .team-name {
-        font-size : 22px;
-        width : 50%;
-        cursor: pointer;
-        &:hover {
-            color : #f00;
-        }
-    }
-    & .game-id {
-        position : absolute;
-        top : 10%;
-        left : 50%;
-        transform : translateX(-50%);
-        font-size : 15px;
-    }
-    & .vs {
-        position : absolute;
-        top : 50%;
-        left : 50%;
-        transform : translateX(-50%);
-        font-size : 18px;
-    }
-`;
-
 const SelectBox = styled.div`
     width : 400px;
     height : 300px;
@@ -105,25 +68,8 @@ const Select = () => {
         sound = new Howl({ src });
         sound.play();
     }
-
-    useEffect(() => {
-        return soundStop;
-    })
-
-    const gameList = teamData.map(game => {
-        return (
-            <Game key={game.id}>
-                <div className='team-name away'>
-                    <span>{game.away.teamName}</span>
-                </div>
-                <span className='game-id'>GAME {game.id}</span>
-                <span className='vs'>VS</span>
-                <div className='team-name home'>
-                    <span>{game.home.teamName}</span>
-                </div>
-            </Game>
-        )
-    });
+    soundPlay(sportsBGM);
+    useEffect(() => soundStop);
 
     return (
         <SelectWrap>
@@ -132,9 +78,8 @@ const Select = () => {
                 <Title duration={'3s'}>게임 선택 ^.^</Title>
                 <StateText>참가할 게임을 선택하세요!</StateText>
                 <SelectBox>
-                    {gameList}
+                    <Games />
                 </SelectBox>
-                {soundPlay(sportsBGM)}
             </SelectInner>
         </SelectWrap>
     )
