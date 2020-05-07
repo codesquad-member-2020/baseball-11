@@ -25,7 +25,7 @@ const MainInner = styled.div`
 
 const Title = styled.div`
     font-family: "ChosunGs";
-    font-size : 80px;
+    font-size : 100px;
     font-weight : 600;
     margin-bottom : 80px;
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
