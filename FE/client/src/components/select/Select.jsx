@@ -23,14 +23,14 @@ const SelectInner = styled.div`
 
 const Title = styled.div`
     font-family: "ChosunGs";
-    font-size : 50px;
+    font-size : 70px;
     font-weight : 600;
     margin-bottom : 80px;
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
     -webkit-background-clip: text;
     color: transparent;
     animation-name: bingle;
-    animation-duration: ${props => (props.duration)};
+    animation-duration: 3s;
     animation-timing-function:linear;
     animation-iteration-count: infinite;
     @keyframes bingle{
@@ -72,8 +72,7 @@ const Select = () => {
     return (
         <SelectWrap>
             <SelectInner>
-                <Title duration={'6s'}>행복한 하루 되세요</Title>
-                <Title duration={'3s'}>게임 선택 ^.^</Title>
+                <Title>게임 선택 ^.^</Title>
                 <StateText>참가할 게임을 선택하세요!</StateText>
                 <SelectBox>
                     <Games />
