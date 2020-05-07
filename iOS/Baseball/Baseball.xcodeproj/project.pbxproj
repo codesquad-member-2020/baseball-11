@@ -17,6 +17,7 @@
 		C249745B24625CE500E8C517 /* BaseballTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249745A24625CE500E8C517 /* BaseballTests.swift */; };
 		C24974672462619F00E8C517 /* GameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24974662462619F00E8C517 /* GameplayView.swift */; };
 		C29682C02462B25900758643 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682BF2462B25900758643 /* UIColorExtensions.swift */; };
+		C29682C32464070B00758643 /* SuperMario256.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C29682C22464070100758643 /* SuperMario256.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		C249745C24625CE500E8C517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C24974662462619F00E8C517 /* GameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayView.swift; sourceTree = "<group>"; };
 		C29682BF2462B25900758643 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		C29682C22464070100758643 /* SuperMario256.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMario256.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +94,9 @@
 				C249744524625CE200E8C517 /* FirstViewController.swift */,
 				C249744724625CE200E8C517 /* SecondViewController.swift */,
 				C249744924625CE200E8C517 /* Main.storyboard */,
-				C249744C24625CE400E8C517 /* Assets.xcassets */,
 				C249744E24625CE400E8C517 /* LaunchScreen.storyboard */,
 				C249745124625CE400E8C517 /* Info.plist */,
+				C29682C1246406B800758643 /* Resources */,
 			);
 			path = Baseball;
 			sourceTree = "<group>";
@@ -122,6 +124,15 @@
 				C29682BF2462B25900758643 /* UIColorExtensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C29682C1246406B800758643 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C29682C22464070100758643 /* SuperMario256.ttf */,
+				C249744C24625CE400E8C517 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C249745024625CE400E8C517 /* LaunchScreen.storyboard in Resources */,
+				C29682C32464070B00758643 /* SuperMario256.ttf in Resources */,
 				C249744D24625CE400E8C517 /* Assets.xcassets in Resources */,
 				C249744B24625CE200E8C517 /* Main.storyboard in Resources */,
 			);
