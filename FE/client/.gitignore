@@ -4,6 +4,9 @@
 /src/mock
 /src/audios
 
+#public
+/public/images
+
 #lock
 package-lock.json
 yarn.lock
