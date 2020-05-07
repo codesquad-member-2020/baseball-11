@@ -107,7 +107,7 @@
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
-        <image name="grass" width="24.5" height="12"/>
+        <image name="grass" width="26" height="15"/>
         <image name="play" catalog="system" width="120" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <namedColor name="baseYellow">
