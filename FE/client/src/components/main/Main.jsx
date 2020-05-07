@@ -18,7 +18,7 @@ const MainInner = styled.div`
     align-items : center;
     background-color : #00000099;
     & .login-btn {
-        width: 100px; 
+        width: 100px;
         height: 50px;
     }
 `;
@@ -28,6 +28,9 @@ const Title = styled.div`
     font-size : 80px;
     font-weight : 600;
     margin-bottom : 80px;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
+    -webkit-background-clip: text;
+    color: transparent;
 `;
 
 const Main = () => {
