@@ -19,6 +19,7 @@ const MatchLogWrap = styled.div`
     flex-direction : column;
     align-items : center;
     overflow : auto;
+    z-index : 1;
     &::-webkit-scrollbar {
         display: none;
     }

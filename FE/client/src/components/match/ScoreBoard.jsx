@@ -10,6 +10,7 @@ const ScoreBoardWrap = styled.div`
     height : 150px;
     color : #fff;
     text-align : center;
+    z-index : 1;
     & .top-board {
         display : flex;
         height : 75%;
