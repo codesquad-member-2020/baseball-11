@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { teamData } from '../../mock/mock';
@@ -46,14 +46,14 @@ const Games = () => {
     const games = teamData.map(game => {
         return (
             <Game key={game.id}>
-                <NavLink to={`/match/${game.id}`} className='team-name away'>
+                <Link to={`/match/${game.id}`} className='team-name away'>
                     <span>{game.away.teamName}</span>
-                </NavLink>
+                </Link>
                 <span className='game-id'>GAME {game.id}</span>
                 <span className='vs'>VS</span>
-                <NavLink to={`/match/${game.id}`} className='team-name home'>
+                <Link to={`/match/${game.id}`} className='team-name home'>
                     <span>{game.home.teamName}</span>
-                </NavLink>
+                </Link>
             </Game>
         )
     });
