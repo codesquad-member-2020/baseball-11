@@ -1,7 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import MatchInfo from './MatchInfo';
+import ScoreBoard from './ScoreBoard';
+import MatchLog from './MatchLog';
 
 const MatchWrap = styled.div`
     position : relative;
@@ -15,7 +16,8 @@ const Match = () => {
     const { id } = useParams();
     return (
         <MatchWrap>
-            <MatchInfo />
+            <ScoreBoard />
+            <MatchLog />
         </MatchWrap>
     )
 }

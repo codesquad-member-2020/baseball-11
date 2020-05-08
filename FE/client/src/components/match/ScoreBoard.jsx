@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const ScoreBoard = styled.div`
+const ScoreBoardWrap = styled.div`
     outline : 1px solid #5a5a5a;
     position : absolute;
     top : 30px;
@@ -113,10 +113,9 @@ const ScoreBoard = styled.div`
     }
 `;
 
-
-const MatchInfo = () => {
+const ScoreBoard = () => {
     return (
-        <ScoreBoard>
+        <ScoreBoardWrap>
             <div className='top-board'>
                 <div className='team-info'>
                     <div className='score away'>0</div>
@@ -157,8 +156,8 @@ const MatchInfo = () => {
                     <div className='p-count'>0</div>
                 </div>
             </div>
-        </ScoreBoard>
+        </ScoreBoardWrap>
     )
 }
 
-export default MatchInfo
+export default ScoreBoard
