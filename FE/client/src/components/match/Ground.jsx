@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Player from './Player';
+import GameButtons from './GameButtons';
 
 import { baseCount } from '../../mock/mock';
 
@@ -18,6 +19,7 @@ const GroundWrap = styled.div`
 const Ground = () => {
     return (
         <GroundWrap>
+            <GameButtons />
             {baseCount.base >= 1 && <Player base='first' />}
             {baseCount.base >= 2 && <Player base='second' />}
             {baseCount.base >= 3 && <Player base='third' />}
