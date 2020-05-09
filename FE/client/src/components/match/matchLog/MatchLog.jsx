@@ -39,25 +39,6 @@ const MatchLogWrap = styled.div`
             margin-bottom : 15px;
             color: #8b8bff;
         }
-        & .log-detail {
-            display : flex;
-            justify-content : space-around;
-            margin-bottom : 5px;
-            font-size : 20px;
-        }
-        & .log-detail-id {
-            background-color : #fff;
-            width : 20px;
-            height : 20px;
-            color : #000;
-            border-radius : 50%;
-        }
-        & .log-detail-status {
-            width : 150px;
-        }
-        & .log-detail-b-count {
-            color : #918d8d;
-        }
     }
 `;
 
