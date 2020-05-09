@@ -77,7 +77,7 @@ const TopBoardWrap = styled.div`
 `;
 
 const TopBoard = () => {
-    const { baseCount, chance, scoreBoard } = useContext(BaseBallContext);
+    const { base, chance, scoreBoard } = useContext(BaseBallContext);
 
     return (
         <TopBoardWrap>
@@ -90,9 +90,9 @@ const TopBoard = () => {
                 <div className='team-name board-home'>{scoreBoard.home.teamName}</div>
             </div>
             <div className='inning-info'>
-                <div className={`base-info first-base ${baseCount.base >= 1 && 'fill-base'}`} />
-                <div className={`base-info second-base ${baseCount.base >= 2 && 'fill-base'}`} />
-                <div className={`base-info third-base ${baseCount.base >= 3 && 'fill-base'}`} />
+                <div className={`base-info first-base ${base >= 1 && 'fill-base'}`} />
+                <div className={`base-info second-base ${base >= 2 && 'fill-base'}`} />
+                <div className={`base-info third-base ${base >= 3 && 'fill-base'}`} />
                 <div className='inning-info-text'>{chance.inning}회{chance.top_bottom === 'top' ? '초' : '말'}</div>
             </div>
         </TopBoardWrap>
