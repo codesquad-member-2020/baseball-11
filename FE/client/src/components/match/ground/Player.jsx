@@ -10,9 +10,9 @@ const PlayerImg = styled.div`
     height : 60px;
     background : url('/images/mario.png') no-repeat;
     background-size : 100% 100%;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(.54,-0.39,.8,1.72);
+    animation-timing-function: cubic-bezier(.54,-0.39,.51,1.44);
     &.first {
         animation-name: first;
     }
