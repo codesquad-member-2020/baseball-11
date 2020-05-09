@@ -31,6 +31,9 @@ const MatchLogWrap = styled.div`
         & .log-hitter {
             margin-bottom : 10px;
             color: #ff8585;
+            &.prev-hitter {
+            color: #adadff;
+            }
         }
         & .log-result {
             margin-bottom : 15px;
@@ -62,7 +65,7 @@ const MatchLog = () => {
     const logs = matchLog.map((data, idx) => {
         return (
             <div className='log-wrap' key={idx}>
-                <div className='log-hitter'>{data.number}번 타자 {data.name}</div>
+                <div className={`log-hitter ${data.result ? 'prev-hitter' : ''}`}>{data.number}번 타자 {data.name}</div>
                 <div className='log-result'>{data.result ? `${data.result}!` : ''}</div>
                 <LogDetail log={data.log} />
             </div>
