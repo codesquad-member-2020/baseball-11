@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 
+import { baseCount } from '../../../mock/mock';
+
 const TopBoardWrap = styled.div`
     display : flex;
     height : 75%;
@@ -58,6 +60,9 @@ const TopBoardWrap = styled.div`
                 top : 35px;
                 left : 20px;
             }
+            &.fill-base {
+                background-color : #ff0;
+            }
         }
         & .inning-info-text {
             width : 100px;
@@ -82,9 +87,9 @@ const TopBoard = () => {
                 <div className='team-name home'>롯데</div>
             </div>
             <div className='inning-info'>
-                <div className='base-info first-base' />
-                <div className='base-info second-base' />
-                <div className='base-info third-base' />
+                <div className={`base-info first-base ${baseCount.base >= 1 ? 'fill-base' : ''}`} />
+                <div className={`base-info second-base ${baseCount.base >= 2 ? 'fill-base' : ''}`} />
+                <div className={`base-info third-base ${baseCount.base >= 3 ? 'fill-base' : ''}`} />
                 <div className='inning-info-text'>1회초</div>
             </div>
         </TopBoardWrap>
