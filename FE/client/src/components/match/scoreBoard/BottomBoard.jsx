@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
-
-import { ballCount, currentPlayer } from '../../../mock/mock';
+import { BaseBallContext } from '../../../store/BaseballStore';
 
 const BottomBoardWrap = styled.div`
     display : flex;
@@ -47,6 +46,8 @@ const BottomBoardWrap = styled.div`
 `;
 
 const BottomBoard = () => {
+    const { ballCount, currentPlayer } = useContext(BaseBallContext);
+
     return (
         <BottomBoardWrap>
             <div className='ball-count'>

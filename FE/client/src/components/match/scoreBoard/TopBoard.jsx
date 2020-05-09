@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
-
-import { baseCount, chance, scoreBoard } from '../../../mock/mock';
+import { BaseBallContext } from '../../../store/BaseballStore';
 
 const TopBoardWrap = styled.div`
     display : flex;
@@ -78,6 +77,8 @@ const TopBoardWrap = styled.div`
 `;
 
 const TopBoard = () => {
+    const { baseCount, chance, scoreBoard } = useContext(BaseBallContext);
+
     return (
         <TopBoardWrap>
             <div className='team-info'>
