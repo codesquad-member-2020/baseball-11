@@ -12,7 +12,7 @@ function useSound(volume, src, fadeoutTime = 0) {
     soundPlay(src);
     sound.on('play', () => {
         const fadeouttime = fadeoutTime;
-        setTimeout(() => sound.fade(1, 0, fadeouttime), (sound.duration() - sound.seek()) * 1000 - fadeouttime);
+        setTimeout(() => sound.fade(volume, 0, fadeouttime), (sound.duration() - sound.seek()) * 1000 - fadeouttime);
     });
 
     useEffect(() => soundStop);
