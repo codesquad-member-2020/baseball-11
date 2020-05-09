@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Player from './Player';
 import GameButtons from './GameButtons';
 
-import { baseCount } from '../../mock/mock';
+import { baseCount } from '../../../mock/mock';
 
 const GroundWrap = styled.div`
     position : relative;

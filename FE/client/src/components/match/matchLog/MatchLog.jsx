@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import LogDetail from './LogDetail';
 
-import { matchLog } from '../../mock/mock';
+import { matchLog } from '../../../mock/mock';
 
 const MatchLogWrap = styled.div`
     position : absolute;
