@@ -47,8 +47,8 @@ const MatchLog = () => {
     const logs = matchLog.map((data, idx) => {
         return (
             <div className='log-wrap' key={idx}>
-                <div className={`log-hitter ${data.result ? 'prev-hitter' : ''}`}>{data.number}번 타자 {data.name}</div>
-                <div className='log-result'>{data.result ? `${data.result}!` : ''}</div>
+                <div className={`log-hitter ${data.result && 'prev-hitter'}`}>{data.number}번 타자 {data.name}</div>
+                <div className='log-result'>{data.result && `${data.result}!`}</div>
                 <LogDetail log={data.log} />
             </div>
         )
