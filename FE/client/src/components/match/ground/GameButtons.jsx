@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
+import { BaseBallContext } from '../../../store/BaseballStore';
 
 const GameButtonsWrap = styled.div`
     position: absolute;
@@ -20,9 +21,13 @@ const GameButtonsWrap = styled.div`
 `;
 
 const GameButtons = () => {
+    const { base, setBase } = useContext(BaseBallContext);
+
+    const handleSwingClick = () => setBase(base + 1);
+
     return (
         <GameButtonsWrap>
-            <button>SWING</button>
+            <button onClick={handleSwingClick}>SWING</button>
             <button>WAIT</button>
         </GameButtonsWrap>
     )
