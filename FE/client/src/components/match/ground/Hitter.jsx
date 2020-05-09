@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 
 const HitterImg = styled.div`
@@ -47,11 +47,14 @@ const HitterImg = styled.div`
     }
 `;
 
-const Hitter = ({ base }) => {
+const Hitter = ({ initBase, advanceBase }) => {
+    const [base, setBase] = useState(-1);
+    const advanceState = ['first', 'second', 'third', 'home'];
+
+    useEffect(() => setBase(initBase), []);
+
     return (
-        <>
-            <HitterImg className={base} />
-        </>
+        <HitterImg className={advanceState[base]} />
     )
 }
 
