@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const PlayerImg = styled.div`
+const HitterImg = styled.div`
     position : absolute;
-    bottom : 30px;
+    bottom : 5%;
     left : 50%;
     transform : translateX(-50%);
-    width : 40px;
-    height : 60px;
+    width : 3%;
+    height : 9%;
     background : url('/images/mario.png') no-repeat;
     background-size : 100% 100%;
     animation-duration: 2s;
@@ -27,32 +27,32 @@ const PlayerImg = styled.div`
     }
     @keyframes first {
         0%  { bottom:30px; left:50%; }
-        99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom:220px; left:72%; }
-        100% { transform : translateX(-50%) scaleX(-1); bottom:220px; left:72%; }
+        99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom:32%; left:72%; }
+        100% { transform : translateX(-50%) scaleX(-1); bottom:32%; left:72%; }
     }
     @keyframes second {
-        0%  { bottom:220px; left:72%; }
-        99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom:330px; left:50%; }
-        100% { transform : translateX(-50%) scaleX(-1); bottom:330px; left:50%; }
+        0%  { bottom:32%; left:72%; }
+        99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom:48%; left:50%; }
+        100% { transform : translateX(-50%) scaleX(-1); bottom:48%; left:50%; }
     }
     @keyframes third {
-        0%  { bottom:330px; left:50%; }
-        99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom:220px; left:28%; }
-        100% { transform : translateX(-50%) scaleX(1); bottom:220px; left:28%; }
+        0%  { bottom:48%; left:50%; }
+        99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom:32%; left:28%; }
+        100% { transform : translateX(-50%) scaleX(1); bottom:32%; left:28%; }
     }
     @keyframes home {
-        0%  { bottom:220px; left:28%; }
+        0%  { bottom:32%; left:28%; }
         99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom: 30px; left:50%; }
         100% { transform : translateX(-50%) scaleX(0); bottom: 30px; left:50%; }
     }
 `;
 
-const Player = ({ base }) => {
+const Hitter = ({ base }) => {
     return (
         <>
-            <PlayerImg className={base} />
+            <HitterImg className={base} />
         </>
     )
 }
 
-export default Player
+export default Hitter
