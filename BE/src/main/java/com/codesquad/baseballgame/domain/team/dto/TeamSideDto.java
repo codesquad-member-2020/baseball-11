@@ -1,19 +1,21 @@
 package com.codesquad.baseballgame.domain.team.dto;
 
-;
+import lombok.Builder;
 import lombok.Getter;
-
-import lombok.Setter;
 import lombok.ToString;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Getter @Setter
+@Getter
 @ToString
 public class TeamSideDto {
 
-    private int gameNumber;
-    private List<TeamDto> teamDtos = new ArrayList<>();
+    private final int gameNumber;
+    private final TeamDto away;
+    private final TeamDto home;
 
+    @Builder
+    public TeamSideDto(int gameNumber, TeamDto away, TeamDto home) {
+        this.gameNumber = gameNumber;
+        this.away = away;
+        this.home = home;
+    }
 }

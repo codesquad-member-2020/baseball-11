@@ -13,8 +13,8 @@ public class TeamController {
 
     private final TeamService teamService;
 
-//   @GetMapping("/teams")
-//    public ResponseEntity<?> teamList() {
-//       return new ResponseEntity<>(teamService.showTeamList(), HttpStatus.OK);
-//   }
+   @GetMapping("/teams")
+    public ResponseEntity<?> teamList() {
+       return new ResponseEntity<>(teamService.showTeamList(), HttpStatus.OK);
+   }
 }

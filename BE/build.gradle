@@ -2,7 +2,6 @@ plugins {
     id 'org.springframework.boot' version '2.2.6.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
-    id "org.flywaydb.flyway" version "6.4.0"
 }
 
 group = 'com.codesquad'

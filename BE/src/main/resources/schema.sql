@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS team;
-DROP TABLE IF EXISTS game;
+DROP TABLE IF EXISTS side;
 DROP TABLE IF EXISTS hitter;
 DROP TABLE IF EXISTS pitcher;
 DROP TABLE IF EXISTS pitch;
@@ -17,9 +17,15 @@ CREATE TABLE team
 (
     id             INT PRIMARY KEY AUTO_INCREMENT,
     name           VARCHAR(16) NOT NULL,
-    stadium        VARCHAR(8),
+    side_id        INT REFERENCES side (id),
     user_id        INT REFERENCES user (id),
-    score_board_id INT REFERENCES score_board (game_number) ON UPDATE CASCADE ON DELETE CASCADE
+    score_board_id INT REFERENCES score_board (game_number)
+);
+
+CREATE TABLE side
+(
+    id   INT PRIMARY KEY AUTO_INCREMENT,
+    side VARCHAR(16)
 );
 
 CREATE TABLE score_board
