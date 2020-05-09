@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import { baseCount } from '../../../mock/mock';
+import { baseCount, chance, scoreBoard } from '../../../mock/mock';
 
 const TopBoardWrap = styled.div`
     display : flex;
@@ -10,29 +10,31 @@ const TopBoardWrap = styled.div`
     width : 32%;
     display : flex;
     flex-direction : column;
-        & .score {
+        & .team-score {
             display : flex;
             align-items : center;
             justify-content : center;
             font-size : 50px;
             height : 70%;
-            &.away {
+            &.board-away {
                 background-color : #f00;
             }
-            &.home {
+            &.board-home {
                 background-color : #00f;
             }
         }
         & .team-name {
-            display : flex;
-            align-items : center;
-            justify-content : center;
-            font-size : 25px;
+            font-size : 22px;
             height : 30%;
-            &.away {
+            line-height: 33.75px;
+            letter-spacing: -0.07em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            &.board-away {
                 background-color : #ff8585;
             }
-            &.home {
+            &.board-home {
                 background-color : #8b8bff;
             }
         }
@@ -70,7 +72,7 @@ const TopBoardWrap = styled.div`
             bottom : 10px;
             left : 50%;
             transform : translateX(-50%);
-            font-size : 25px;
+            font-size : 22px;
         }
     }
 `;
@@ -79,18 +81,18 @@ const TopBoard = () => {
     return (
         <TopBoardWrap>
             <div className='team-info'>
-                <div className='score away'>0</div>
-                <div className='team-name away'>키움</div>
+                <div className='team-score board-away'>{scoreBoard.away.score}</div>
+                <div className='team-name board-away'>{scoreBoard.away.teamName}</div>
             </div>
             <div className='team-info'>
-                <div className='score home'>0</div>
-                <div className='team-name home'>롯데</div>
+                <div className='team-score board-home'>{scoreBoard.home.score}</div>
+                <div className='team-name board-home'>{scoreBoard.home.teamName}</div>
             </div>
             <div className='inning-info'>
                 <div className={`base-info first-base ${baseCount.base >= 1 ? 'fill-base' : ''}`} />
                 <div className={`base-info second-base ${baseCount.base >= 2 ? 'fill-base' : ''}`} />
                 <div className={`base-info third-base ${baseCount.base >= 3 ? 'fill-base' : ''}`} />
-                <div className='inning-info-text'>1회초</div>
+                <div className='inning-info-text'>{chance.inning}회{chance.top_bottom === 'top' ? '초' : '말'}</div>
             </div>
         </TopBoardWrap>
     )

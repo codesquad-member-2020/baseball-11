@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import { ballCount } from '../../../mock/mock';
+import { ballCount, currentPlayer } from '../../../mock/mock';
 
 const BottomBoardWrap = styled.div`
     display : flex;
@@ -69,7 +69,7 @@ const BottomBoard = () => {
             </div>
             <div className='pitches-count'>
                 <div>⚾</div>
-                <div className='p-count'>0</div>
+                <div className='p-count'>{currentPlayer.pitcher.pitchNumber}</div>
             </div>
         </BottomBoardWrap>
     )

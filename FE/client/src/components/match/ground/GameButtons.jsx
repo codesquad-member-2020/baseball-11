@@ -8,7 +8,7 @@ const GameButtonsWrap = styled.div`
     height: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     & button {
         font-size: 25px;
         width: 220px;
