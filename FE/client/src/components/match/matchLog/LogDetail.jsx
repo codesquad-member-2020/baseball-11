@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styled from 'styled-components';
 
 const LogDetailWrap = styled.div`
@@ -39,4 +39,4 @@ const LogDetail = ({ log }) => {
     )
 }
 
-export default LogDetail
+export default memo(LogDetail);
