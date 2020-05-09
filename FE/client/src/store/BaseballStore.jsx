@@ -15,6 +15,8 @@ const BaseballStore = (props) => {
         chance: mock.chance,
         scoreBoard: mock.scoreBoard,
         currentPlayer: mock.currentPlayer,
+        detailScore: mock.detailScore,
+        playerList: mock.playerList,
     }
 
     return (
