@@ -1,9 +1,11 @@
 import React from 'react'
+import useSound from '../../utils/useSound';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import ScoreBoard from './ScoreBoard';
 import MatchLog from './MatchLog';
 import Ground from './Ground';
+import MatchBGM from '../../audios/MatchBGM.mp3';
 
 const MatchWrap = styled.div`
     position : relative;
@@ -14,6 +16,8 @@ const MatchWrap = styled.div`
 
 const Match = () => {
     const { id } = useParams();
+    useSound(0.6, MatchBGM);
+
     return (
         <MatchWrap>
             <ScoreBoard />

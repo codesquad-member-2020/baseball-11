@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { Howl, Howler } from 'howler';
+import React from 'react'
+import useSound from '../../utils/useSound';
 import styled from 'styled-components';
 import Games from './Games';
-import sportsBGM from '../../audios/sports.mp3';
+import SelectBGM from '../../audios/SelectBGM.mp3';
 
 const SelectWrap = styled.div`
     width : 100%;
@@ -59,15 +59,7 @@ const SelectBox = styled.div`
 `;
 
 const Select = () => {
-    Howler.volume(1.0);
-    let sound;
-    const soundStop = () => sound.stop();
-    const soundPlay = (src) => {
-        sound = new Howl({ src });
-        sound.play();
-    }
-    soundPlay(sportsBGM);
-    useEffect(() => soundStop);
+    useSound(1.0, SelectBGM);
 
     return (
         <SelectWrap>
