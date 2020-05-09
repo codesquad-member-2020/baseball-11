@@ -22,7 +22,7 @@ const LogDetailWrap = styled.div`
 `;
 
 const LogDetail = ({ log }) => {
-    const logDetails = log.map(data => {
+    const logDetails = log.reverse().map(data => {
         return (
             <LogDetailWrap key={data.id}>
                 <div className='log-detail-id'>{data.id}</div>
