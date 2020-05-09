@@ -59,7 +59,7 @@ const SelectBox = styled.div`
 `;
 
 const Select = () => {
-    useSound(1.0, SelectBGM);
+    useSound(1.0, SelectBGM, 2000);
 
     return (
         <SelectWrap>
