@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
 import LogDetail from './LogDetail';
-
-import { matchLog } from '../../../mock/mock';
+import { BaseBallContext } from '../../../store/BaseballStore';
 
 const MatchLogWrap = styled.div`
     position : absolute;
@@ -39,34 +38,17 @@ const MatchLogWrap = styled.div`
             margin-bottom : 15px;
             color: #8b8bff;
         }
-        & .log-detail {
-            display : flex;
-            justify-content : space-around;
-            margin-bottom : 5px;
-            font-size : 20px;
-        }
-        & .log-detail-id {
-            background-color : #fff;
-            width : 20px;
-            height : 20px;
-            color : #000;
-            border-radius : 50%;
-        }
-        & .log-detail-status {
-            width : 150px;
-        }
-        & .log-detail-b-count {
-            color : #918d8d;
-        }
     }
 `;
 
 const MatchLog = () => {
+    const { matchLog } = useContext(BaseBallContext);
+
     const logs = matchLog.map((data, idx) => {
         return (
             <div className='log-wrap' key={idx}>
-                <div className={`log-hitter ${data.result ? 'prev-hitter' : ''}`}>{data.number}번 타자 {data.name}</div>
-                <div className='log-result'>{data.result ? `${data.result}!` : ''}</div>
+                <div className={`log-hitter ${data.result && 'prev-hitter'}`}>{data.number}번 타자 {data.name}</div>
+                <div className='log-result'>{data.result && `${data.result}!`}</div>
                 <LogDetail log={data.log} />
             </div>
         )

@@ -19,7 +19,6 @@ const NotFoundInner = styled.div`
 `;
 
 const Title = styled.div`
-    font-family: "ChosunGs";
     font-size : 55px;
     font-weight : 600;
     margin-bottom : 80px;

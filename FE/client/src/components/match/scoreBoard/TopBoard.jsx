@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
-
-import { baseCount, chance, scoreBoard } from '../../../mock/mock';
+import { BaseBallContext } from '../../../store/BaseballStore';
 
 const TopBoardWrap = styled.div`
     display : flex;
@@ -78,6 +77,8 @@ const TopBoardWrap = styled.div`
 `;
 
 const TopBoard = () => {
+    const { baseCount, chance, scoreBoard } = useContext(BaseBallContext);
+
     return (
         <TopBoardWrap>
             <div className='team-info'>
@@ -89,9 +90,9 @@ const TopBoard = () => {
                 <div className='team-name board-home'>{scoreBoard.home.teamName}</div>
             </div>
             <div className='inning-info'>
-                <div className={`base-info first-base ${baseCount.base >= 1 ? 'fill-base' : ''}`} />
-                <div className={`base-info second-base ${baseCount.base >= 2 ? 'fill-base' : ''}`} />
-                <div className={`base-info third-base ${baseCount.base >= 3 ? 'fill-base' : ''}`} />
+                <div className={`base-info first-base ${baseCount >= 1 && 'fill-base'}`} />
+                <div className={`base-info second-base ${baseCount >= 2 && 'fill-base'}`} />
+                <div className={`base-info third-base ${baseCount >= 3 && 'fill-base'}`} />
                 <div className='inning-info-text'>{chance.inning}회{chance.top_bottom === 'top' ? '초' : '말'}</div>
             </div>
         </TopBoardWrap>

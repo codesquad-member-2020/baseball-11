@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
-
-import { ballCount, currentPlayer } from '../../../mock/mock';
+import { BaseBallContext } from '../../../store/BaseballStore';
 
 const BottomBoardWrap = styled.div`
     display : flex;
@@ -47,24 +46,26 @@ const BottomBoardWrap = styled.div`
 `;
 
 const BottomBoard = () => {
+    const { ballCount, currentPlayer } = useContext(BaseBallContext);
+
     return (
         <BottomBoardWrap>
             <div className='ball-count'>
                 <div>
                     <span className='b-count-text'>B</span>
-                    <span className={`b-count ${ballCount.ball >= 1 ? 'ball-count' : ''}`} />
-                    <span className={`b-count ${ballCount.ball >= 2 ? 'ball-count' : ''}`} />
-                    <span className={`b-count ${ballCount.ball >= 3 ? 'ball-count' : ''}`} />
+                    <span className={`b-count ${ballCount.ball >= 1 && 'ball-count'}`} />
+                    <span className={`b-count ${ballCount.ball >= 2 && 'ball-count'}`} />
+                    <span className={`b-count ${ballCount.ball >= 3 && 'ball-count'}`} />
                 </div>
                 <div>
                     <span className='b-count-text'>S</span>
-                    <span className={`b-count ${ballCount.strike >= 1 ? 'strike-count' : ''}`} />
-                    <span className={`b-count ${ballCount.strike >= 2 ? 'strike-count' : ''}`} />
+                    <span className={`b-count ${ballCount.strike >= 1 && 'strike-count'}`} />
+                    <span className={`b-count ${ballCount.strike >= 2 && 'strike-count'}`} />
                 </div>
                 <div>
                     <span className='b-count-text'>O</span>
-                    <span className={`b-count ${ballCount.out >= 1 ? 'out-count' : ''}`} />
-                    <span className={`b-count ${ballCount.out >= 2 ? 'out-count' : ''}`} />
+                    <span className={`b-count ${ballCount.out >= 1 && 'out-count'}`} />
+                    <span className={`b-count ${ballCount.out >= 2 && 'out-count'}`} />
                 </div>
             </div>
             <div className='pitches-count'>
