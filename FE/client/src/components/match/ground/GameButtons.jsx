@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components';
+import Hitter from './Hitter';
 import { BaseBallContext } from '../../../store/BaseballStore';
 
 const GameButtonsWrap = styled.div`
@@ -21,14 +22,42 @@ const GameButtonsWrap = styled.div`
 `;
 
 const GameButtons = () => {
-    const { base, setBase } = useContext(BaseBallContext);
+    const { baseCount, setBaseCount, runners, setRunners, hitterBox, setHitterBox } = useContext(BaseBallContext);
 
-    const handleSwingClick = () => setBase(base + 1);
+    const setRunnerAnim = () => {
+        const currRunners = [...runners, <Hitter />];
+        const updateRunners = currRunners.map((runner, idx) => {
+            if (idx > 3) return;
+            let currBase;
+            switch (runner.props.currBase) {
+                case 'first': currBase = 'second';
+                    break;
+                case 'second': currBase = 'third';
+                    break;
+                case 'third': currBase = 'home';
+                    break;
+                default: currBase = 'first';
+                    break;
+            }
+            return <Hitter key={idx} {...{ currBase }} />
+        });
+        setRunners([...updateRunners]);
+    }
+
+    const handleSwingClick = () => {
+        setHitterBox(false);
+        setTimeout(() => setHitterBox(true), 2500);
+        setRunnerAnim();
+
+        if (baseCount + 1 >= 4) return; // 득점처리
+        setBaseCount(baseCount + 1);
+    };
+
 
     return (
         <GameButtonsWrap>
-            <button onClick={handleSwingClick}>SWING</button>
-            <button>WAIT</button>
+            <button onClick={handleSwingClick} disabled={!hitterBox}>SWING</button>
+            <button disabled={!hitterBox}>WAIT</button>
         </GameButtonsWrap>
     )
 }

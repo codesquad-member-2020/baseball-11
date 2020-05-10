@@ -6,7 +6,7 @@ export const BaseBallContext = createContext();
 
 const BaseballStore = (props) => {
     // 임시 mock 데이터
-    const [base, setBase] = useState(mock.baseCount.base);
+    const [baseCount, setBaseCount] = useState(mock.baseCount.base);
 
     const mockData = {
         teamData: mock.teamData,
@@ -19,8 +19,17 @@ const BaseballStore = (props) => {
         playerList: mock.playerList,
     }
 
+    const [runners, setRunners] = useState([]);
+    const [hitterBox, setHitterBox] = useState(true);
+
     return (
-        <BaseBallContext.Provider value={{ ...mockData, base, setBase }}>
+        <BaseBallContext.Provider
+            value={{
+                ...mockData,
+                baseCount, setBaseCount,
+                runners, setRunners,
+                hitterBox, setHitterBox
+            }}>
             {props.children}
         </BaseBallContext.Provider >
     )

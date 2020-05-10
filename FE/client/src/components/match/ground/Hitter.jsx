@@ -47,11 +47,9 @@ const HitterImg = styled.div`
     }
 `;
 
-const Hitter = ({ base }) => {
-    const advanceState = ['first', 'second', 'third', 'home'];
-
+const Hitter = ({ currBase }) => {
     return (
-        <HitterImg className={advanceState[base]} />
+        <HitterImg className={currBase} />
     )
 }
 

@@ -3,17 +3,12 @@ import Hitter from './Hitter';
 import { BaseBallContext } from '../../../store/BaseballStore';
 
 const Base = () => {
-    const { base } = useContext(BaseBallContext);
-
-    let hitters = [];
-    for (let i = 0; i < base; i++) {
-        hitters.push(<Hitter key={i} base={i} />)
-    }
+    const { runners, hitterBox } = useContext(BaseBallContext);
 
     return (
         <>
-            {<Hitter />}
-            {hitters}
+            {hitterBox && <Hitter />}
+            {runners}
         </>
     )
 }
