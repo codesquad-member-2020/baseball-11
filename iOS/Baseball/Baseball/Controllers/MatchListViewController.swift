@@ -13,7 +13,7 @@ class MatchListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let viewModel = MatchListViewModel()
-    private let delegate = MatchListDelegate()
+    private lazy var delegate = MatchListDelegate(frame: view.frame)
     
     override func viewDidLoad() {
         super.viewDidLoad()

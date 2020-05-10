@@ -28,8 +28,8 @@ class MatchCell: UICollectionViewCell {
     private func configureView() {
         contentView.layer.cornerRadius = cornerRadius
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 5, height: 5)
-        layer.shadowRadius = 2.0
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowRadius = 6
         layer.shadowOpacity = 0.2
         layer.masksToBounds = false
     }

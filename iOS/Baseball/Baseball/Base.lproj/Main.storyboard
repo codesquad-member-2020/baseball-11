@@ -100,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBD-qE-whY">
-                                <rect key="frame" x="101.66666666666669" y="76" width="172" height="30"/>
+                                <rect key="frame" x="123.66666666666666" y="76" width="127.66666666666666" height="34.666666666666657"/>
                                 <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -108,9 +108,9 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-iG-TQf">
-                                <rect key="frame" x="0.0" y="130" width="375" height="648"/>
+                                <rect key="frame" x="0.0" y="126.66666666666669" width="375" height="651.33333333333326"/>
                                 <color key="backgroundColor" name="backgroundLightBlue"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W8X-Fo-hNm">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W8X-Fo-hNm">
                                     <size key="itemSize" width="375" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -118,70 +118,79 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MatchCell" id="44m-DI-Ead" customClass="MatchCell" customModule="Baseball" customModuleProvider="target">
-                                        <rect key="frame" x="28.333333333333332" y="0.0" width="318.33333333333326" height="56"/>
+                                        <rect key="frame" x="8.6666666666666661" y="0.0" width="358" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3mh-jJ-vct">
-                                            <rect key="frame" x="0.0" y="0.0" width="318.33333333333326" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TNb-1E-pt5">
-                                                    <rect key="frame" x="8" y="8" width="302.33333333333331" height="40"/>
+                                                    <rect key="frame" x="8" y="8" width="342" height="45"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="away" translatesAutoresizingMaskIntoConstraints="NO" id="SB9-9X-uSV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="36" height="40"/>
+                                                            <rect key="frame" x="0.0" y="5" width="36" height="40"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="SB9-9X-uSV" secondAttribute="height" multiplier="55:61" id="JZQ-Af-TzF"/>
-                                                                <constraint firstAttribute="height" constant="40" id="qfr-MQ-5AK"/>
+                                                                <constraint firstAttribute="height" constant="40" id="0Oj-IQ-TqU"/>
+                                                                <constraint firstAttribute="width" secondItem="SB9-9X-uSV" secondAttribute="height" multiplier="55:61" id="7GG-1F-O8Z"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Scj-31-vUq">
-                                                            <rect key="frame" x="48" y="2" width="79" height="38"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Scj-31-vUq">
+                                                            <rect key="frame" x="47.999999999999993" y="1.3333333333333321" width="104.33333333333331" height="43.666666666666671"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkH-go-T2N">
-                                                                    <rect key="frame" x="18.000000000000004" y="0.0" width="43.333333333333343" height="14"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkH-go-T2N">
+                                                                    <rect key="frame" x="35.666666666666671" y="0.0" width="32.666666666666671" height="16.333333333333332"/>
                                                                     <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Team1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEI-Vg-khw">
-                                                                    <rect key="frame" x="0.0" y="18" width="79" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Team1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEI-Vg-khw">
+                                                                    <rect key="frame" x="0.0" y="20.333333333333336" width="104.33333333333333" height="23.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="vEI-Vg-khw" firstAttribute="width" secondItem="Scj-31-vUq" secondAttribute="width" id="6j8-Va-l5z"/>
+                                                            </constraints>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="vs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvZ-nc-YY5">
-                                                            <rect key="frame" x="139" y="23" width="27" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvZ-nc-YY5">
+                                                            <rect key="frame" x="164.33333333333334" y="25" width="17" height="20"/>
                                                             <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DHc-d5-SDn">
-                                                            <rect key="frame" x="178" y="2" width="79.666666666666686" height="38"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DHc-d5-SDn">
+                                                            <rect key="frame" x="193.33333333333334" y="1.3333333333333321" width="104.00000000000003" height="43.666666666666671"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ea-Pn-2fk">
-                                                                    <rect key="frame" x="17.666666666666654" y="0.0" width="44.666666666666657" height="14"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ea-Pn-2fk">
+                                                                    <rect key="frame" x="34.333333333333314" y="0.0" width="35.333333333333343" height="16.333333333333332"/>
                                                                     <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Team2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLl-mZ-teS">
-                                                                    <rect key="frame" x="0.0" y="18" width="79.666666666666671" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Team2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLl-mZ-teS">
+                                                                    <rect key="frame" x="0.0" y="20.333333333333336" width="104" height="23.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="tLl-mZ-teS" firstAttribute="width" secondItem="DHc-d5-SDn" secondAttribute="width" id="Xa0-oc-nSN"/>
+                                                            </constraints>
                                                         </stackView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="x02-lp-nKF">
-                                                            <rect key="frame" x="269.66666666666669" y="0.0" width="32.666666666666686" height="40"/>
+                                                            <rect key="frame" x="309.33333333333331" y="5" width="32.666666666666686" height="40"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="x02-lp-nKF" secondAttribute="height" multiplier="22:27" id="6wy-tf-5cS"/>
-                                                                <constraint firstAttribute="height" constant="40" id="kkn-uZ-fs4"/>
+                                                                <constraint firstAttribute="height" constant="40" id="Lse-jn-e9i"/>
+                                                                <constraint firstAttribute="width" secondItem="x02-lp-nKF" secondAttribute="height" multiplier="22:27" id="lIx-gd-ZZ8"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="vEI-Vg-khw" firstAttribute="width" secondItem="tLl-mZ-teS" secondAttribute="width" multiplier="1:1" id="Bcw-ej-61m"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" name="backgroundLightBlue"/>
@@ -192,6 +201,7 @@
                                                 <constraint firstItem="TNb-1E-pt5" firstAttribute="top" secondItem="3mh-jJ-vct" secondAttribute="top" constant="8" id="Ybd-VW-w3j"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="358" height="61"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="15"/>
@@ -208,7 +218,7 @@
                             <constraint firstItem="RZF-lU-8b1" firstAttribute="bottom" secondItem="jPg-iG-TQf" secondAttribute="bottom" id="Fuu-lm-Aih"/>
                             <constraint firstItem="RZF-lU-8b1" firstAttribute="trailing" secondItem="jPg-iG-TQf" secondAttribute="trailing" id="IlC-Vr-3da"/>
                             <constraint firstItem="hBD-qE-whY" firstAttribute="centerX" secondItem="LYi-FZ-bVj" secondAttribute="centerX" id="OCX-Fg-19m"/>
-                            <constraint firstItem="jPg-iG-TQf" firstAttribute="top" secondItem="hBD-qE-whY" secondAttribute="bottom" constant="24" id="yFw-Dy-jPf"/>
+                            <constraint firstItem="jPg-iG-TQf" firstAttribute="top" secondItem="hBD-qE-whY" secondAttribute="bottom" constant="16" id="yFw-Dy-jPf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RZF-lU-8b1"/>
                     </view>
