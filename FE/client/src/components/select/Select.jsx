@@ -1,5 +1,5 @@
 import React from 'react'
-import useSound from '../../utils/useSound';
+import useSound from '../../hooks/useSound';
 import styled from 'styled-components';
 import Games from './Games';
 import SelectBGM from '../../audios/SelectBGM.mp3';
