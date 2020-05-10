@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  PlayViewController.swift
 //  Baseball
 //
 //  Created by Chaewan Park on 2020/05/06.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class PlayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
