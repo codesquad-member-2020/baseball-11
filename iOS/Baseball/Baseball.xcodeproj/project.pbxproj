@@ -91,6 +91,11 @@
 			children = (
 				C29682BE2462B24700758643 /* Utils */,
 				C24974652462601A00E8C517 /* Views */,
+				C29682C62467F7CC00758643 /* ViewModels */,
+				C29682C82467F81000758643 /* Delegates */,
+				C29682C92467F81D00758643 /* Controllers */,
+				C29682C72467F7DB00758643 /* Models */,
+				C29682CB2467F89300758643 /* Networking */,
 				C249744124625CE200E8C517 /* AppDelegate.swift */,
 				C249744324625CE200E8C517 /* SceneDelegate.swift */,
 				C249744524625CE200E8C517 /* FirstViewController.swift */,
@@ -136,6 +141,41 @@
 				C249744C24625CE400E8C517 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C29682C62467F7CC00758643 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C29682C72467F7DB00758643 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C29682C82467F81000758643 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		C29682C92467F81D00758643 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C29682CB2467F89300758643 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
