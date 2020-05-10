@@ -9,6 +9,7 @@ const GroundWrap = styled.div`
     height: 100%;
     background : url('/images/ground.jpg') no-repeat;
     background-size : 100% 100%;
+    overflow: hidden;
 `;
 
 const Ground = () => {

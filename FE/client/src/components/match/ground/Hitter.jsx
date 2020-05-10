@@ -42,8 +42,8 @@ const HitterImg = styled.div`
     }
     @keyframes home {
         0%  { bottom:32%; left:28%; }
-        99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom: 30px; left:50%; }
-        100% { transform : translateX(-50%) scaleX(0); bottom: 30px; left:50%; }
+        99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom: -10%; left:60%; }
+        100% { transform : translateX(-50%) scaleX(0); bottom: -10%; left:60%; }
     }
 `;
 
