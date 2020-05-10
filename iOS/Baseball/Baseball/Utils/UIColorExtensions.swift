@@ -11,6 +11,7 @@ import UIKit
 extension UIColor {
     
     static let backgroundGreen = UIColor(named: "backgroundGreen")!
+    static let backgroundLightBlue = UIColor(named: "backgroundLightBlue")!
     static let baseYellow = UIColor(named: "baseYellow")!
     
     static let borderGreen = UIColor(named: "borderGreen")!

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  ScoreViewController.swift
 //  Baseball
 //
 //  Created by Chaewan Park on 2020/05/06.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ScoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
