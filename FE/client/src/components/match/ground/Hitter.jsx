@@ -26,7 +26,7 @@ const HitterImg = styled.div`
         animation-name: home;
     }
     @keyframes first {
-        0%  { bottom:30px; left:50%; }
+        0%  { bottom:5%; left:50%; }
         99% { transform : translateX(-50%) rotate(3600deg) scaleX(1); bottom:32%; left:72%; }
         100% { transform : translateX(-50%) scaleX(-1); bottom:32%; left:72%; }
     }
