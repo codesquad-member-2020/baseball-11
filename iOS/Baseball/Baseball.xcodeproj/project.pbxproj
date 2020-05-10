@@ -22,6 +22,8 @@
 		C29682CD2467FFEF00758643 /* MatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682CC2467FFEF00758643 /* MatchListViewController.swift */; };
 		C29682CF2468022A00758643 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682CE2468022A00758643 /* MatchCell.swift */; };
 		C29682D1246802ED00758643 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682D0246802ED00758643 /* ReusableView.swift */; };
+		C29682D3246804BC00758643 /* MatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682D2246804BC00758643 /* MatchListViewModel.swift */; };
+		C29682D5246805FA00758643 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682D4246805FA00758643 /* Match.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		C29682CC2467FFEF00758643 /* MatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewController.swift; sourceTree = "<group>"; };
 		C29682CE2468022A00758643 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		C29682D0246802ED00758643 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		C29682D2246804BC00758643 /* MatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewModel.swift; sourceTree = "<group>"; };
+		C29682D4246805FA00758643 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 		C29682C62467F7CC00758643 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C29682D2246804BC00758643 /* MatchListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		C29682C72467F7DB00758643 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C29682D4246805FA00758643 /* Match.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,7 +304,9 @@
 				C29682C02462B25900758643 /* UIColorExtensions.swift in Sources */,
 				C249744224625CE200E8C517 /* AppDelegate.swift in Sources */,
 				C249744424625CE200E8C517 /* SceneDelegate.swift in Sources */,
+				C29682D3246804BC00758643 /* MatchListViewModel.swift in Sources */,
 				C29682C524640C1000758643 /* MatchView.swift in Sources */,
+				C29682D5246805FA00758643 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,5 +17,3 @@ extension ReusableView {
         return String(describing: self)
     }
 }
-
-extension MatchCell: ReusableView { }

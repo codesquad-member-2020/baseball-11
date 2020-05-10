@@ -1,15 +1,13 @@
 //
-//  MatchCell.swift
+//  Match.swift
 //  Baseball
 //
 //  Created by Chaewan Park on 2020/05/10.
 //  Copyright © 2020 Chaewan Park. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class MatchCell: UICollectionViewCell {
+struct Match {
     
 }
-
-extension MatchCell: ReusableView { }
