@@ -20,6 +20,8 @@
 		C29682C32464070B00758643 /* SuperMario256.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C29682C22464070100758643 /* SuperMario256.ttf */; };
 		C29682C524640C1000758643 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682C424640C1000758643 /* MatchView.swift */; };
 		C29682CD2467FFEF00758643 /* MatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682CC2467FFEF00758643 /* MatchListViewController.swift */; };
+		C29682CF2468022A00758643 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682CE2468022A00758643 /* MatchCell.swift */; };
+		C29682D1246802ED00758643 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682D0246802ED00758643 /* ReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		C29682C22464070100758643 /* SuperMario256.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMario256.ttf; sourceTree = "<group>"; };
 		C29682C424640C1000758643 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		C29682CC2467FFEF00758643 /* MatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewController.swift; sourceTree = "<group>"; };
+		C29682CE2468022A00758643 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		C29682D0246802ED00758643 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 			children = (
 				C24974662462619F00E8C517 /* GameplayView.swift */,
 				C29682C424640C1000758643 /* MatchView.swift */,
+				C29682CE2468022A00758643 /* MatchCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C29682BF2462B25900758643 /* UIColorExtensions.swift */,
+				C29682D0246802ED00758643 /* ReusableView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -283,6 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C29682CF2468022A00758643 /* MatchCell.swift in Sources */,
+				C29682D1246802ED00758643 /* ReusableView.swift in Sources */,
 				C29682CD2467FFEF00758643 /* MatchListViewController.swift in Sources */,
 				C249744824625CE200E8C517 /* ScoreViewController.swift in Sources */,
 				C24974672462619F00E8C517 /* GameplayView.swift in Sources */,
