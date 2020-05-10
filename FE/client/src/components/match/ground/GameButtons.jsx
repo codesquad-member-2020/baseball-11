@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import styled from 'styled-components';
 import Hitter from './Hitter';
 import { BaseBallContext } from '../../../store/BaseballStore';
+import effectSound from '../../../utils/effectSound';
+import hitES from '../../../audios/hitES.mp3';
 
 const GameButtonsWrap = styled.div`
     position: absolute;
@@ -23,6 +25,7 @@ const GameButtonsWrap = styled.div`
 
 const GameButtons = () => {
     const { baseCount, setBaseCount, runners, setRunners, hitterBox, setHitterBox } = useContext(BaseBallContext);
+    const hitSound = effectSound(hitES);
 
     const setRunnerAnim = () => {
         const currRunners = [...runners, <Hitter />];
@@ -45,6 +48,7 @@ const GameButtons = () => {
     }
 
     const handleSwingClick = () => {
+        hitSound.play();
         setHitterBox(false);
         setTimeout(() => setHitterBox(true), 2500);
         setRunnerAnim();

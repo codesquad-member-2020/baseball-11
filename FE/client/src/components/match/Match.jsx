@@ -16,7 +16,7 @@ const MatchWrap = styled.div`
 
 const Match = () => {
     const { id } = useParams();
-    useSound(0.5, MatchBGM, 2000);
+    useSound(MatchBGM, 0.3, 2000);
 
     return (
         <MatchWrap>

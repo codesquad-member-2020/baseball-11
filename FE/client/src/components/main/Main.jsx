@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import effectSound from '../../utils/effectSound';
+import hitterES from '../../audios/hitterES.mp3';
 
 const MainWrap = styled.div`
     width : 100%;
@@ -33,6 +35,9 @@ const Title = styled.div`
 `;
 
 const Main = () => {
+    const hitterSound = effectSound(hitterES);
+    hitterSound.play();
+
     return (
         <MainWrap>
             <MainInner>
