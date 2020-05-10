@@ -109,6 +109,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-iG-TQf">
                                 <rect key="frame" x="0.0" y="134.66666666666669" width="375" height="643.33333333333326"/>
+                                <color key="backgroundColor" name="backgroundLightBlue"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W8X-Fo-hNm">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>

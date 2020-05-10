@@ -24,6 +24,7 @@
 		C29682D1246802ED00758643 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682D0246802ED00758643 /* ReusableView.swift */; };
 		C29682D3246804BC00758643 /* MatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682D2246804BC00758643 /* MatchListViewModel.swift */; };
 		C29682D5246805FA00758643 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682D4246805FA00758643 /* Match.swift */; };
+		C29682D72468161800758643 /* MatchListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29682D62468161800758643 /* MatchListDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		C29682D0246802ED00758643 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		C29682D2246804BC00758643 /* MatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewModel.swift; sourceTree = "<group>"; };
 		C29682D4246805FA00758643 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		C29682D62468161800758643 /* MatchListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		C29682C82467F81000758643 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				C29682D62468161800758643 /* MatchListDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				C249744224625CE200E8C517 /* AppDelegate.swift in Sources */,
 				C249744424625CE200E8C517 /* SceneDelegate.swift in Sources */,
 				C29682D3246804BC00758643 /* MatchListViewModel.swift in Sources */,
+				C29682D72468161800758643 /* MatchListDelegate.swift in Sources */,
 				C29682C524640C1000758643 /* MatchView.swift in Sources */,
 				C29682D5246805FA00758643 /* Match.swift in Sources */,
 			);
