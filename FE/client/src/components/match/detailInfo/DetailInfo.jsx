@@ -4,7 +4,7 @@ import PlayerInfo from './PlayerInfo';
 import InfoButtonsWrap from './InfoButtons';
 
 const DetailInfo = () => {
-    const defaultState = { scoreInfo: false, playerInfo: true };
+    const defaultState = { scoreInfo: false, playerInfo: false };
     const [showPanel, setShowPanel] = useState(defaultState);
     const [showContent, setShowContent] = useState(defaultState);
 

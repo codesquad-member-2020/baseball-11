@@ -13,7 +13,7 @@ const ScoreInfoWrap = styled.div`
 
 const ScoreInfoBox = styled.div`
     position: absolute;
-    top: -20%;
+    top: -25%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 800px;
@@ -27,18 +27,18 @@ const ScoreInfoBox = styled.div`
     animation-duration: 1.5s;
     animation-fill-mode: both;
     &.show-content {
-        animation-name: show-content;
+        animation-name: show-scoreInfo;
     }
     &.hide-content {
-        animation-name: hide-content;
+        animation-name: hide-scoreInfo;
     }
-    @keyframes show-content {
-        0%  { top: -20%; }
+    @keyframes show-scoreInfo {
+        0%  { top: -25%; }
         100% { top: 25%; }
     }
-    @keyframes hide-content {
+    @keyframes hide-scoreInfo {
         0%  { top: 25%; }
-        100% { top: -20%; }
+        100% { top: -25%; }
     }
     & table {
         text-align: center;
