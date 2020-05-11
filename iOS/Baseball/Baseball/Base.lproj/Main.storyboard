@@ -192,13 +192,27 @@
                                                         <constraint firstItem="vEI-Vg-khw" firstAttribute="width" secondItem="tLl-mZ-teS" secondAttribute="width" multiplier="1:1" id="Bcw-ej-61m"/>
                                                     </constraints>
                                                 </stackView>
+                                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zm-5x-pWk" customClass="DimView" customModule="Baseball" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="61"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Pzd-AV-Hl8">
+                                                    <rect key="frame" x="160.66666666666666" y="12" width="37" height="37"/>
+                                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" name="backgroundLightBlue"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="TNb-1E-pt5" secondAttribute="bottom" constant="8" id="CGw-ie-PXQ"/>
+                                                <constraint firstItem="5zm-5x-pWk" firstAttribute="width" secondItem="3mh-jJ-vct" secondAttribute="width" id="FAt-uI-746"/>
                                                 <constraint firstItem="TNb-1E-pt5" firstAttribute="leading" secondItem="3mh-jJ-vct" secondAttribute="leading" constant="8" id="J1z-OZ-Wce"/>
                                                 <constraint firstAttribute="trailing" secondItem="TNb-1E-pt5" secondAttribute="trailing" constant="8" id="M1P-Yd-bF8"/>
                                                 <constraint firstItem="TNb-1E-pt5" firstAttribute="top" secondItem="3mh-jJ-vct" secondAttribute="top" constant="8" id="Ybd-VW-w3j"/>
+                                                <constraint firstItem="5zm-5x-pWk" firstAttribute="centerX" secondItem="3mh-jJ-vct" secondAttribute="centerX" id="cVV-Zc-reY"/>
+                                                <constraint firstItem="5zm-5x-pWk" firstAttribute="height" secondItem="3mh-jJ-vct" secondAttribute="height" id="gHw-P0-1Yb"/>
+                                                <constraint firstItem="5zm-5x-pWk" firstAttribute="centerY" secondItem="3mh-jJ-vct" secondAttribute="centerY" id="lC0-G4-klG"/>
+                                                <constraint firstItem="Pzd-AV-Hl8" firstAttribute="centerX" secondItem="3mh-jJ-vct" secondAttribute="centerX" id="ruF-qb-wZ2"/>
+                                                <constraint firstItem="Pzd-AV-Hl8" firstAttribute="centerY" secondItem="3mh-jJ-vct" secondAttribute="centerY" id="ujr-0V-y3S"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="358" height="61"/>
@@ -208,7 +222,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="Pzd-AV-Hl8" id="1V4-IJ-OVk"/>
                                             <outlet property="awayLabel" destination="vEI-Vg-khw" id="a0X-Bd-JII"/>
+                                            <outlet property="dimView" destination="5zm-5x-pWk" id="UFu-ZO-9xV"/>
                                             <outlet property="homeLabel" destination="tLl-mZ-teS" id="nUT-GN-U3R"/>
                                             <segue destination="49e-Tb-3d3" kind="show" id="Cib-FX-pZx"/>
                                         </connections>

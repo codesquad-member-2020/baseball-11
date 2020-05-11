@@ -32,6 +32,7 @@
 		C29800AB24693187007A6D1D /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29800AA24693187007A6D1D /* URLProtocolMock.swift */; };
 		C29800AD2469323F007A6D1D /* MatchesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C29800AC2469323F007A6D1D /* MatchesResponse.json */; };
 		C29800B02469444B007A6D1D /* MatchesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29800AF2469444A007A6D1D /* MatchesUseCase.swift */; };
+		C2B842B42469681800448857 /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B842B32469681800448857 /* DimView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		C29800AA24693187007A6D1D /* URLProtocolMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		C29800AC2469323F007A6D1D /* MatchesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MatchesResponse.json; sourceTree = "<group>"; };
 		C29800AF2469444A007A6D1D /* MatchesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesUseCase.swift; sourceTree = "<group>"; };
+		C2B842B32469681800448857 /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				C24974662462619F00E8C517 /* GameplayView.swift */,
 				C29682CE2468022A00758643 /* MatchCell.swift */,
+				C2B842B32469681800448857 /* DimView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				C29682CD2467FFEF00758643 /* MatchListViewController.swift in Sources */,
 				C249744824625CE200E8C517 /* ScoreViewController.swift in Sources */,
 				C24974672462619F00E8C517 /* GameplayView.swift in Sources */,
+				C2B842B42469681800448857 /* DimView.swift in Sources */,
 				C249744624625CE200E8C517 /* PlayViewController.swift in Sources */,
 				C29682C02462B25900758643 /* UIColorExtensions.swift in Sources */,
 				C249744224625CE200E8C517 /* AppDelegate.swift in Sources */,
