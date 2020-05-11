@@ -1,0 +1,29 @@
+[
+    {
+        "gameNumber": 1,
+        "away": {
+            "teamName": "키움"
+        },
+        "home": {
+            "teamName": "롯데"
+        }
+    },
+    {
+        "gameNumber": 2,
+        "away": {
+            "teamName": "LG"
+        },
+        "home": {
+            "teamName": "두산"
+        }
+    },
+    {
+        "gameNumber": 3,
+        "away": {
+            "teamName": "한화"
+        },
+        "home": {
+            "teamName": "삼성"
+        }
+    }
+]

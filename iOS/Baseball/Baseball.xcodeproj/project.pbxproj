@@ -29,6 +29,8 @@
 		C29800A524692DC7007A6D1D /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29800A124692DC7007A6D1D /* APIRouter.swift */; };
 		C29800A624692DC7007A6D1D /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29800A224692DC7007A6D1D /* APIBuilder.swift */; };
 		C29800A824692F8A007A6D1D /* DefaultLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29800A724692F8A007A6D1D /* DefaultLocation.swift */; };
+		C29800AB24693187007A6D1D /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29800AA24693187007A6D1D /* URLProtocolMock.swift */; };
+		C29800AD2469323F007A6D1D /* MatchesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C29800AC2469323F007A6D1D /* MatchesResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		C29800A124692DC7007A6D1D /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		C29800A224692DC7007A6D1D /* APIBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
 		C29800A724692F8A007A6D1D /* DefaultLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLocation.swift; sourceTree = "<group>"; };
+		C29800AA24693187007A6D1D /* URLProtocolMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		C29800AC2469323F007A6D1D /* MatchesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MatchesResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,12 +204,22 @@
 		C29682CB2467F89300758643 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				C29800A924693122007A6D1D /* Mocking */,
 				C29800A224692DC7007A6D1D /* APIBuilder.swift */,
 				C29800A124692DC7007A6D1D /* APIRouter.swift */,
 				C298009F24692DC7007A6D1D /* Endpoints.swift */,
 				C29800A024692DC7007A6D1D /* NetworkManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C29800A924693122007A6D1D /* Mocking */ = {
+			isa = PBXGroup;
+			children = (
+				C29800AC2469323F007A6D1D /* MatchesResponse.json */,
+				C29800AA24693187007A6D1D /* URLProtocolMock.swift */,
+			);
+			path = Mocking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +306,7 @@
 				C249745024625CE400E8C517 /* LaunchScreen.storyboard in Resources */,
 				C29682C32464070B00758643 /* SuperMario256.ttf in Resources */,
 				C249744D24625CE400E8C517 /* Assets.xcassets in Resources */,
+				C29800AD2469323F007A6D1D /* MatchesResponse.json in Resources */,
 				C249744B24625CE200E8C517 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C29682CF2468022A00758643 /* MatchCell.swift in Sources */,
+				C29800AB24693187007A6D1D /* URLProtocolMock.swift in Sources */,
 				C29800A524692DC7007A6D1D /* APIRouter.swift in Sources */,
 				C29682D1246802ED00758643 /* ReusableView.swift in Sources */,
 				C29800A824692F8A007A6D1D /* DefaultLocation.swift in Sources */,
