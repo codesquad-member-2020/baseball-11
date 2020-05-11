@@ -7,8 +7,19 @@ import SelectBGM from '../../audios/SelectBGM.mp3';
 const SelectWrap = styled.div`
     width : 100%;
     height : 100%;
+`;
+
+const Background = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width : 100%;
+    height : 100%;
     background : url('/images/ground.jpg') no-repeat;
     background-size : 100% 100%;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
 `;
 
 const SelectInner = styled.div`
@@ -69,6 +80,7 @@ const Select = () => {
                     <Games />
                 </SelectBox>
             </SelectInner>
+            <Background />
         </SelectWrap>
     )
 }
