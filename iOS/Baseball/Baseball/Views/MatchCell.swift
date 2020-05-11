@@ -11,8 +11,15 @@ import UIKit
 @IBDesignable
 class MatchCell: UICollectionViewCell {
     
+    @IBOutlet weak var awayLabel: UILabel!
+    @IBOutlet weak var homeLabel: UILabel!
+    
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet { configureView() }
+    }
+    
+    var match: Match? = nil {
+        didSet { configureCell() }
     }
     
     override init(frame: CGRect) {
@@ -32,6 +39,11 @@ class MatchCell: UICollectionViewCell {
         layer.shadowRadius = 6
         layer.shadowOpacity = 0.2
         layer.masksToBounds = false
+    }
+    
+    private func configureCell() {
+        awayLabel.text = match?.away.name
+        homeLabel.text = match?.home.name
     }
 }
 

@@ -2,10 +2,10 @@
     {
         "gameNumber": 1,
         "away": {
-            "teamName": "키움"
+            "teamName": "Kiwoom"
         },
         "home": {
-            "teamName": "롯데"
+            "teamName": "Lotte"
         }
     },
     {
@@ -14,16 +14,16 @@
             "teamName": "LG"
         },
         "home": {
-            "teamName": "두산"
+            "teamName": "Doosan"
         }
     },
     {
         "gameNumber": 3,
         "away": {
-            "teamName": "한화"
+            "teamName": "Hanwha"
         },
         "home": {
-            "teamName": "삼성"
+            "teamName": "Samsung"
         }
     }
 ]
