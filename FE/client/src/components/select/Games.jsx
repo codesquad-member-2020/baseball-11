@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { MatchContext } from '../../store/MatchStore';
+
+import { teamData } from '../../mock/mockData';
 
 const Game = styled.div`
     position : relative;
@@ -42,8 +43,6 @@ const Game = styled.div`
 `;
 
 const Games = () => {
-    const { teamData } = useContext(MatchContext);
-
     const games = teamData.map(game => {
         return (
             <Game key={game.id}>

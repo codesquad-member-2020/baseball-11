@@ -9,7 +9,6 @@ const MatchStore = (props) => {
     const [baseCount, setBaseCount] = useState(mock.baseCount.base);
 
     const mockData = {
-        teamData: mock.teamData,
         matchLog: mock.matchLog,
         ballCount: mock.ballCount,
         chance: mock.chance,
