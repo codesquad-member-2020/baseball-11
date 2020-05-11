@@ -3,8 +3,6 @@ package com.codesquad.baseballgame.global.github;
 import com.codesquad.baseballgame.global.config.GithubOauthProperty;
 import com.codesquad.baseballgame.global.github.domain.GithubToken;
 import com.codesquad.baseballgame.global.github.domain.User;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -15,7 +13,6 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,13 +59,5 @@ public class GithubLoginService {
         sb.append(" ");
         sb.append(githubToken.getAccessToken());
         return sb.toString();
-    }
-
-    public String buildJwt(User user) {
-        return Jwts.builder()
-                .signWith(SignatureAlgorithm.HS256, "secret")
-                .claim("user", user.getUserId())
-                .setExpiration(new Date(System.currentTimeMillis() + 86400000))
-                .compact();
     }
 }

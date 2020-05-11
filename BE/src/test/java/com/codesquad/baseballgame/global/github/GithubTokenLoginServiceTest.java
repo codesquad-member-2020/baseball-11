@@ -1,6 +1,7 @@
 package com.codesquad.baseballgame.global.github;
 
 import com.codesquad.baseballgame.global.config.GithubOauthProperty;
+import com.codesquad.baseballgame.global.utils.JwtUtils;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.junit.jupiter.api.Test;
@@ -29,8 +30,8 @@ class GithubTokenLoginServiceTest {
 
     @Test
     public void 프로퍼티출력() {
-        System.out.println(config.getUrl());
-        System.out.println(config.getClientId());
-        System.out.println(config.getClientSecret());
+        String jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJrc2VzMTAxMCJ9.NvpIQaVX8rmlRhfOWe2hmKAATFOgX4bnWGVQf1iQcYQ";
+        String parse = JwtUtils.jwtParsing(jwt);
+        System.out.println(parse);
     }
 }
