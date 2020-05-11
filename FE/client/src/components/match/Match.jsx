@@ -7,6 +7,7 @@ import MatchLog from './matchLog/MatchLog';
 import Ground from './ground/Ground';
 import DetailInfo from './detailInfo/DetailInfo';
 import MatchBGM from '../../audios/MatchBGM.mp3';
+import MatchStore from '../../store/MatchStore';
 
 const MatchWrap = styled.div`
     position : relative;
@@ -20,10 +21,12 @@ const Match = () => {
 
     return (
         <MatchWrap>
-            <ScoreBoard />
-            <MatchLog />
-            <Ground />
-            <DetailInfo />
+            <MatchStore>
+                <ScoreBoard />
+                <MatchLog />
+                <Ground />
+                <DetailInfo />
+            </MatchStore>
         </MatchWrap>
     )
 }

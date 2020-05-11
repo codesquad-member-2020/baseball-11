@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { BaseBallContext } from '../../store/BaseballStore';
+import { MatchContext } from '../../store/MatchStore';
 
 const Game = styled.div`
     position : relative;
@@ -42,7 +42,7 @@ const Game = styled.div`
 `;
 
 const Games = () => {
-    const { teamData } = useContext(BaseBallContext);
+    const { teamData } = useContext(MatchContext);
 
     const games = teamData.map(game => {
         return (

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components';
 import Hitter from './Hitter';
-import { BaseBallContext } from '../../../store/BaseballStore';
+import { MatchContext } from '../../../store/MatchStore';
 import effectSound from '../../../utils/effectSound';
 import hitES from '../../../audios/hitES.mp3';
 
@@ -24,7 +24,7 @@ const GameButtonsWrap = styled.div`
 `;
 
 const GameButtons = () => {
-    const { baseCount, setBaseCount, runners, setRunners, hitterBox, setHitterBox } = useContext(BaseBallContext);
+    const { baseCount, setBaseCount, runners, setRunners, boxOnHitter, setBoxOnHitter } = useContext(MatchContext);
     const hitSound = effectSound(hitES);
 
     const setRunnerAnim = () => {
@@ -49,8 +49,8 @@ const GameButtons = () => {
 
     const handleSwingClick = () => {
         hitSound.play();
-        setHitterBox(false);
-        setTimeout(() => setHitterBox(true), 2500);
+        setBoxOnHitter(false);
+        setTimeout(() => setBoxOnHitter(true), 2500);
         setRunnerAnim();
 
         if (baseCount + 1 >= 4) return; // 득점처리
@@ -60,8 +60,8 @@ const GameButtons = () => {
 
     return (
         <GameButtonsWrap>
-            <button onClick={handleSwingClick} disabled={!hitterBox}>SWING</button>
-            <button disabled={!hitterBox}>WAIT</button>
+            <button onClick={handleSwingClick} disabled={!boxOnHitter}>SWING</button>
+            <button disabled={!boxOnHitter}>WAIT</button>
         </GameButtonsWrap>
     )
 }

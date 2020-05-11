@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components';
-import { BaseBallContext } from '../../../store/BaseballStore';
+import { MatchContext } from '../../../store/MatchStore';
 
 const BottomBoardWrap = styled.div`
     display : flex;
@@ -46,7 +46,7 @@ const BottomBoardWrap = styled.div`
 `;
 
 const BottomBoard = () => {
-    const { ballCount, currentPlayer } = useContext(BaseBallContext);
+    const { ballCount, currentPlayer } = useContext(MatchContext);
 
     return (
         <BottomBoardWrap>

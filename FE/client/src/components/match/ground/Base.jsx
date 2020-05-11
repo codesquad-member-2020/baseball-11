@@ -1,17 +1,17 @@
 import React, { useContext } from 'react'
 import Hitter from './Hitter';
-import { BaseBallContext } from '../../../store/BaseballStore';
+import { MatchContext } from '../../../store/MatchStore';
 import effectSound from '../../../utils/effectSound';
 import hitterES from '../../../audios/hitterES.mp3';
 
 const Base = () => {
-    const { runners, hitterBox } = useContext(BaseBallContext);
+    const { runners, boxOnHitter } = useContext(MatchContext);
     const hitterSound = effectSound(hitterES);
-    if (hitterBox) hitterSound.play();
+    if (boxOnHitter) hitterSound.play();
 
     return (
         <>
-            {hitterBox && <Hitter />}
+            {boxOnHitter && <Hitter />}
             {runners}
         </>
     )
