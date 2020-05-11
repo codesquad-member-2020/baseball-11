@@ -19,16 +19,11 @@ const MatchStore = (props) => {
         playerList: mock.playerList,
     }
 
-    const [runners, setRunners] = useState([]);
-    const [boxOnHitter, setBoxOnHitter] = useState(true);
-
     return (
         <MatchContext.Provider
             value={{
                 ...mockData,
                 baseCount, setBaseCount,
-                runners, setRunners,
-                boxOnHitter, setBoxOnHitter
             }}>
             {props.children}
         </MatchContext.Provider >

@@ -23,8 +23,8 @@ const GameButtonsWrap = styled.div`
     }
 `;
 
-const GameButtons = () => {
-    const { baseCount, setBaseCount, runners, setRunners, boxOnHitter, setBoxOnHitter } = useContext(MatchContext);
+const GameButtons = ({ boxOnHitter, setBoxOnHitter, runners, setRunners }) => {
+    const { baseCount, setBaseCount } = useContext(MatchContext);
     const hitSound = effectSound(hitES);
 
     const setRunnerAnim = () => {
