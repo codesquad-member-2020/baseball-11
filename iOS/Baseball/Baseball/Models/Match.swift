@@ -21,5 +21,9 @@ struct Match: Codable {
 }
 
 struct Team: Codable {
-    let teamName: String
+    let name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "teamName"
+    }
 }
