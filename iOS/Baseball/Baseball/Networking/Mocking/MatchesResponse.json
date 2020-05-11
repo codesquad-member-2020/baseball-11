@@ -1,0 +1,29 @@
+[
+    {
+        "gameNumber": 1,
+        "away": {
+            "teamName": "Kiwoom"
+        },
+        "home": {
+            "teamName": "Lotte"
+        }
+    },
+    {
+        "gameNumber": 2,
+        "away": {
+            "teamName": "LG"
+        },
+        "home": {
+            "teamName": "Doosan"
+        }
+    },
+    {
+        "gameNumber": 3,
+        "away": {
+            "teamName": "Hanwha"
+        },
+        "home": {
+            "teamName": "Samsung"
+        }
+    }
+]
