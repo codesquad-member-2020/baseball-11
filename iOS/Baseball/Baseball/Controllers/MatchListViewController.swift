@@ -27,6 +27,12 @@ class MatchListViewController: UIViewController {
         configureSession()
         configureUseCase()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = collectionView.indexPathsForSelectedItems?.first,
+            let cell = collectionView.cellForItem(at: indexPath) as? MatchCell else { return }
+        cell.state = .waiting
+    }
 
     private func configureViewModel() {
         viewModel.updateNotify { [weak self] _ in
