@@ -2,9 +2,13 @@ import React from 'react'
 import styled from 'styled-components';
 
 const ScoreInfoWrap = styled.div`
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background-color: #00000080;
+    z-index: 10;
 `;
 
 const ScoreInfoBox = styled.div`
@@ -66,11 +70,11 @@ const ScoreInfoBox = styled.div`
     }
 `;
 
-const ScoreInfo = ({ showScoreInfo }) => {
-    const showClassName = showScoreInfo ? 'show-content' : 'hide-content';
+const ScoreInfo = ({ showContent }) => {
+    const showClassName = showContent.scoreInfo ? 'show-content' : 'hide-content';
 
     return (
-        <ScoreInfoWrap data-type='contentPanel'>
+        <ScoreInfoWrap data-type='contentPanel' data-content='scoreInfo'>
             <ScoreInfoBox className={showClassName}>
                 <table>
                     <colgroup>
