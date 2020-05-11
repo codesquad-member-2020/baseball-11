@@ -18,12 +18,12 @@ enum HTTPError: Error {
     }
 }
 
-protocol NetworkManageable {
-    func request<T: Decodable>(_ responseType: T.Type,
-                               with request: URLRequest?,
-                               completion: @escaping (Result<T, Error>) -> Void)
-    func downloadImage(with request: URLRequest?,
-                       completion: @escaping (Result<Data, Error>) -> Void)
+class NetworkManageable {
+    private let session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
 }
  
 extension NetworkManageable {
@@ -32,7 +32,7 @@ extension NetworkManageable {
                                completion: @escaping (Result<T, Error>) -> Void) {
         guard let request = request else { return }
         
-        URLSession(configuration: .default).dataTask(with: request) { data, response, error in
+        session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -50,7 +50,7 @@ extension NetworkManageable {
                        completion: @escaping (Result<Data, Error>) -> Void) {
         guard let request = request else { return }
         
-        URLSession(configuration: .default).downloadTask(with: request) { location, response, error in
+        session.downloadTask(with: request) { location, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -91,7 +91,7 @@ extension NetworkManageable {
     }
 }
 
-struct NetworkManager: NetworkManageable { }
+final class NetworkManager: NetworkManageable { }
 
 private extension HTTPURLResponse {
     func isValid() -> Bool {
