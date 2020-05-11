@@ -2,15 +2,12 @@ package com.codesquad.baseballgame.domain.team.dao;
 
 import com.codesquad.baseballgame.domain.team.dto.TeamDto;
 import com.codesquad.baseballgame.domain.team.mapper.TeamDtoMapper;
-import org.omg.SendingContext.RunTime;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.util.Map;
 
 @Repository
 public class TeamDao {

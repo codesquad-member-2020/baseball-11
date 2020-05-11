@@ -1,8 +1,9 @@
-package com.codesquad.baseballgame.global.github;
+package com.codesquad.baseballgame.global.github.service;
 
 import com.codesquad.baseballgame.global.config.GithubOauthProperty;
-import com.codesquad.baseballgame.global.github.domain.GithubToken;
-import com.codesquad.baseballgame.global.github.domain.User;
+import com.codesquad.baseballgame.global.github.dao.UserDao;
+import com.codesquad.baseballgame.global.github.dto.GithubToken;
+import com.codesquad.baseballgame.global.github.dto.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -22,8 +23,25 @@ public class GithubLoginService {
 
     private final String GITHUB_API_URL = "https://api.github.com/user";
     private final GithubOauthProperty githubOauth;
+    private final UserDao userDao;
 
-    public GithubToken getGithubAccessToken(String code) {
+    public UserDto returnUserId(String code) {
+        UserDto userDto = getUserId(code);
+        if (findUserDto(userDto.getUserId()) == null) {
+            userDao.saveUserDao(userDto);
+        }
+        return userDto;
+    }
+
+    private MultiValueMap<String, String> requestAccess() {
+        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+        Map<String, String> header = new HashMap<>();
+        header.put("Accept", "application/json");
+        headers.setAll(header);
+        return headers;
+    }
+
+    private GithubToken getGithubAccessToken(String code) {
         MultiValueMap<String, String> requestHeaders = new LinkedMultiValueMap<>();
         Map<String, String> requestHeader = new HashMap<>();
         requestHeader.put("client_id", githubOauth.getClientId());
@@ -36,21 +54,18 @@ public class GithubLoginService {
         return response.getBody();
     }
 
-    public User getUserId(GithubToken githubToken) {
+    private UserDto getUserId(String code) {
+        GithubToken githubToken = getGithubAccessToken(code);
         HttpHeaders headers = new HttpHeaders();
         headers.set("authorization", getAuthorizationValue(githubToken));
-        ResponseEntity<User> responseEntity = new RestTemplate().exchange(GITHUB_API_URL, HttpMethod.GET,
-                new HttpEntity<>(headers), User.class);
+        ResponseEntity<UserDto> responseEntity = new RestTemplate().exchange(GITHUB_API_URL, HttpMethod.GET,
+                new HttpEntity<>(headers), UserDto.class);
 
         return responseEntity.getBody();
     }
 
-    private MultiValueMap<String, String> requestAccess() {
-        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-        Map<String, String> header = new HashMap<>();
-        header.put("Accept", "application/json");
-        headers.setAll(header);
-        return headers;
+    private UserDto findUserDto(String userId) {
+        return userDao.findUserDtoById(userId);
     }
 
     private String getAuthorizationValue(GithubToken githubToken) {

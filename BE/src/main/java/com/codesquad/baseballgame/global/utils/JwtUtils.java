@@ -1,6 +1,6 @@
 package com.codesquad.baseballgame.global.utils;
 
-import com.codesquad.baseballgame.global.github.domain.User;
+import com.codesquad.baseballgame.global.github.dto.UserDto;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -11,7 +11,7 @@ import java.util.Map;
 public class JwtUtils {
     private static final String JWT_KEY = "A";
 
-    public static String jwtCreate(User user) {
+    public static String jwtCreate(UserDto user) {
         Map<String, Object> headers = new HashMap<>();
         headers.put("typ", "JWT");
         headers.put("alg", "HS256");

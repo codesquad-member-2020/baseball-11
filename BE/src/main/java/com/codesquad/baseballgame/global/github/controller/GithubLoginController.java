@@ -1,7 +1,8 @@
-package com.codesquad.baseballgame.global.github;
+package com.codesquad.baseballgame.global.github.controller;
 
-import com.codesquad.baseballgame.global.github.domain.GithubToken;
-import com.codesquad.baseballgame.global.github.domain.User;
+import com.codesquad.baseballgame.global.github.dto.GithubToken;
+import com.codesquad.baseballgame.global.github.dto.UserDto;
+import com.codesquad.baseballgame.global.github.service.GithubLoginService;
 import com.codesquad.baseballgame.global.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -24,10 +25,8 @@ public class GithubLoginController {
     @GetMapping("/githublogin")
     public ResponseEntity<String> oauth(@RequestParam("code") String code,
                                    HttpServletResponse response) {
-        GithubToken githubToken = githubLoginService.getGithubAccessToken(code);
-        User githubUser = githubLoginService.getUserId(githubToken);
+        UserDto githubUser = githubLoginService.returnUserId(code);
         String jwt = JwtUtils.jwtCreate(githubUser);
-
         Cookie cookie = new Cookie("userId", jwt);
         cookie.setMaxAge(600000);
         response.addCookie(cookie);

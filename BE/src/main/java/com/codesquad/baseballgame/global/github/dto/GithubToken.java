@@ -1,4 +1,4 @@
-package com.codesquad.baseballgame.global.github.domain;
+package com.codesquad.baseballgame.global.github.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
