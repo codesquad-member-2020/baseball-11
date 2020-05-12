@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
+import { MatchContext } from '../../../store/MatchStore';
+import TPlayer from './TPlayer';
 
 const PlayerInfoWrap = styled.div`
     position: absolute;
@@ -78,184 +80,15 @@ const CenterLine = styled.div`
 `;
 
 const PlayerInfo = ({ showContent }) => {
+    const { playerList } = useContext(MatchContext);
     const showClassName = showContent.playerInfo ? 'show-content' : 'hide-content';
 
     return (
         <PlayerInfoWrap data-type='contentPanel' data-content='playerInfo'>
             <PlayerInfoBox className={showClassName}>
-                <table>
-                    <thead>
-                        <tr>
-                            <th colSpan='5'>레알마드리드</th>
-                        </tr>
-                        <tr>
-                            <th>타자</th>
-                            <th>타석</th>
-                            <th>안타</th>
-                            <th>아웃</th>
-                            <th>평균</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>김광진</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>이동규</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>김진수</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>박영권</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>추신수</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>이용대</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>류현진</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>최동수</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>한양범</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>Totals</td>
-                            <td>9</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <TPlayer teamData={playerList.away} />
                 <CenterLine />
-                <table>
-                    <thead>
-                        <tr>
-                            <th colSpan='5'>맨유</th>
-                        </tr>
-                        <tr>
-                            <th>타자</th>
-                            <th>타석</th>
-                            <th>안타</th>
-                            <th>아웃</th>
-                            <th>평균</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>김광진</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>이동규</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>김진수</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>박영권</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>추신수</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>이용대</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>류현진</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>최동수</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>한양범</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1.000</td>
-                        </tr>
-                        <tr>
-                            <td>Totals</td>
-                            <td>9</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <TPlayer teamData={playerList.home} />
             </PlayerInfoBox>
         </PlayerInfoWrap>
     )
