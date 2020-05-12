@@ -1,5 +1,7 @@
-import React from 'react'
-import useSound from '../../utils/useSound';
+import React, { useState } from 'react'
+import useSound from '../../hooks/useSound';
+import useFetch from '../../hooks/useFetch';
+import URL from '../../constants/url';
 import styled from 'styled-components';
 import Games from './Games';
 import SelectBGM from '../../audios/SelectBGM.mp3';
@@ -7,8 +9,19 @@ import SelectBGM from '../../audios/SelectBGM.mp3';
 const SelectWrap = styled.div`
     width : 100%;
     height : 100%;
+`;
+
+const Background = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width : 100%;
+    height : 100%;
     background : url('/images/ground.jpg') no-repeat;
     background-size : 100% 100%;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
 `;
 
 const SelectInner = styled.div`
@@ -58,7 +71,10 @@ const SelectBox = styled.div`
 `;
 
 const Select = () => {
-    useSound(1.0, SelectBGM, 2000);
+    const [gameData, setGameData] = useState(null);
+    const { BASE, GAMES } = URL;
+    useFetch(setGameData, BASE + GAMES);
+    useSound(SelectBGM, 1.0, 5000);
 
     return (
         <SelectWrap>
@@ -66,9 +82,10 @@ const Select = () => {
                 <Title>게임 선택 ^.^</Title>
                 <StateText>참가할 게임을 선택하세요!</StateText>
                 <SelectBox>
-                    <Games />
+                    {gameData && <Games {...{ gameData }} />}
                 </SelectBox>
             </SelectInner>
+            <Background />
         </SelectWrap>
     )
 }

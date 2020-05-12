@@ -2,14 +2,13 @@ import React, { useState, useReducer, createContext } from 'react'
 
 import * as mock from '../mock/mockData';
 
-export const BaseBallContext = createContext();
+export const MatchContext = createContext();
 
-const BaseballStore = (props) => {
+const MatchStore = ({ children }) => {
     // 임시 mock 데이터
     const [baseCount, setBaseCount] = useState(mock.baseCount.base);
 
     const mockData = {
-        teamData: mock.teamData,
         matchLog: mock.matchLog,
         ballCount: mock.ballCount,
         chance: mock.chance,
@@ -19,20 +18,15 @@ const BaseballStore = (props) => {
         playerList: mock.playerList,
     }
 
-    const [runners, setRunners] = useState([]);
-    const [hitterBox, setHitterBox] = useState(true);
-
     return (
-        <BaseBallContext.Provider
+        <MatchContext.Provider
             value={{
                 ...mockData,
                 baseCount, setBaseCount,
-                runners, setRunners,
-                hitterBox, setHitterBox
             }}>
-            {props.children}
-        </BaseBallContext.Provider >
+            {children}
+        </MatchContext.Provider >
     )
 }
 
-export default BaseballStore
+export default MatchStore

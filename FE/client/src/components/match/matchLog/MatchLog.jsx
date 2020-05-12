@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components';
 import LogDetail from './LogDetail';
-import { BaseBallContext } from '../../../store/BaseballStore';
+import { MatchContext } from '../../../store/MatchStore';
 
 const MatchLogWrap = styled.div`
     position : absolute;
@@ -42,7 +42,7 @@ const MatchLogWrap = styled.div`
 `;
 
 const MatchLog = () => {
-    const { matchLog } = useContext(BaseBallContext);
+    const { matchLog } = useContext(MatchContext);
 
     const logs = matchLog.map((data, idx) => {
         return (

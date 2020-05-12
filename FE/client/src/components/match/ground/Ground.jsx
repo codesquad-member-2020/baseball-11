@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import Base from './Base';
 import GameButtons from './GameButtons';
@@ -13,10 +13,13 @@ const GroundWrap = styled.div`
 `;
 
 const Ground = () => {
+    const [boxOnHitter, setBoxOnHitter] = useState(true);
+    const [runners, setRunners] = useState([]);
+
     return (
         <GroundWrap>
-            <GameButtons />
-            <Base />
+            <GameButtons {...{ boxOnHitter, setBoxOnHitter, runners, setRunners }} />
+            <Base {...{ boxOnHitter, runners }} />
         </GroundWrap>
     )
 }

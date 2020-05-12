@@ -5,8 +5,19 @@ import styled from 'styled-components';
 const NotFoundWrap = styled.div`
     width : 100%;
     height : 100%;
+`;
+
+const Background = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width : 100%;
+    height : 100%;
     background : url('/images/bonobono.jpg') no-repeat;
     background-size : 100% 100%;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
 `;
 
 const NotFoundInner = styled.div`
@@ -36,6 +47,7 @@ const NotFound = () => {
             <NotFoundInner>
                 {wait ? <Title>존재하지 않는 페이지 입니다. 메인 페이지로 이동 합니다.</Title> : <Redirect to='/' />}
             </NotFoundInner>
+            <Background />
         </NotFoundWrap>
     )
 }

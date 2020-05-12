@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Redirect, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { BaseBallContext } from '../../store/BaseballStore';
+import URL from '../../constants/url';
+import dataFetch from '../../utils/dataFetch';
 
 const Game = styled.div`
     position : relative;
@@ -41,26 +42,46 @@ const Game = styled.div`
     }
 `;
 
-const Games = () => {
-    const { teamData } = useContext(BaseBallContext);
+const Games = ({ gameData }) => {
+    const { teamData } = gameData;
+    const { BASE, SELECT_TEAM } = URL;
+    const [selectGame, setSelectGame] = useState({ validTeam: false, gameNumber: null });
+    const history = useHistory();
+
+    const handleSelectTeam = async (teamId, gameId) => {
+        const url = BASE + SELECT_TEAM + teamId;
+        const option = {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                Cookie: process.env.REACT_APP_TEMP_COOKIE
+            }
+        }
+        const isSelected = await dataFetch(url, option);
+
+        if (!isSelected) return; // 이미 선택 된 팀 처리
+        history.push('/select');
+        setSelectGame(Object.assign({ ...selectGame }, { validTeam: true, gameNumber: gameId }))
+    }
 
     const games = teamData.map(game => {
         return (
-            <Game key={game.id}>
-                <Link to={`/match/${game.id}`} className='team-name away'>
-                    <span>{game.away.teamName}</span>
-                </Link>
-                <span className='game-id'>GAME {game.id}</span>
+            <Game key={game.gameNumber}>
+                <div data-team-id={game.away.id} className='team-name' onClick={() => handleSelectTeam(game.away.id, game.gameNumber)}>
+                    {game.away.name}
+                </div>
+                <span className='game-id'>GAME {game.gameNumber}</span>
                 <span className='vs'>VS</span>
-                <Link to={`/match/${game.id}`} className='team-name home'>
-                    <span>{game.home.teamName}</span>
-                </Link>
+                <div data-team-id={game.home.id} className='team-name' onClick={() => handleSelectTeam(game.home.id, game.gameNumber)}>
+                    {game.home.name}
+                </div>
             </Game>
         )
     });
 
     return (
         <>
+            {selectGame.validTeam && <Redirect to={`/match/${selectGame.gameNumber}`} />}
             {games}
         </>
     )
