@@ -9,8 +9,9 @@ const InfoButtonsWrap = styled.div`
     display: flex;
     justify-content: space-between;
     width: 250px;
+    z-index: 10;
     & button {
-        background-color: transparent;
+        background-color: #000;
         color: #fff;
         outline: none;
         border: 1px solid #ccc;
