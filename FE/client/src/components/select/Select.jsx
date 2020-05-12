@@ -74,7 +74,7 @@ const Select = () => {
     const [gameData, setGameData] = useState(null);
     const { BASE, GAMES } = URL;
     useFetch(setGameData, BASE + GAMES);
-    useSound(SelectBGM, 1.0, 5000);
+    useSound(SelectBGM, 1.0, 10000);
 
     return (
         <SelectWrap>
