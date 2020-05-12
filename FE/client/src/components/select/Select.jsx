@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useSound from '../../hooks/useSound';
+import useFetch from '../../hooks/useFetch';
+import URL from '../../constants/url';
 import styled from 'styled-components';
 import Games from './Games';
 import SelectBGM from '../../audios/SelectBGM.mp3';
@@ -69,6 +71,9 @@ const SelectBox = styled.div`
 `;
 
 const Select = () => {
+    const [gameData, setGameData] = useState(null);
+    const { BASE, GAMES } = URL;
+    useFetch(setGameData, BASE + GAMES);
     useSound(SelectBGM, 1.0, 2000);
 
     return (
@@ -77,7 +82,7 @@ const Select = () => {
                 <Title>게임 선택 ^.^</Title>
                 <StateText>참가할 게임을 선택하세요!</StateText>
                 <SelectBox>
-                    <Games />
+                    {gameData && <Games {...{ gameData }} />}
                 </SelectBox>
             </SelectInner>
             <Background />

@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { teamData } from '../../mock/mockData';
-
 const Game = styled.div`
     position : relative;
     width : 100%;
@@ -42,17 +40,18 @@ const Game = styled.div`
     }
 `;
 
-const Games = () => {
+const Games = ({ gameData }) => {
+    const { teamData } = gameData;
     const games = teamData.map(game => {
         return (
-            <Game key={game.id}>
-                <Link to={`/match/${game.id}`} className='team-name away'>
-                    <span>{game.away.teamName}</span>
+            <Game key={game.gameNumber}>
+                <Link to={`/match/${game.gameNumber}`} className='team-name away'>
+                    <span>{game.away.name}</span>
                 </Link>
-                <span className='game-id'>GAME {game.id}</span>
+                <span className='game-id'>GAME {game.gameNumber}</span>
                 <span className='vs'>VS</span>
-                <Link to={`/match/${game.id}`} className='team-name home'>
-                    <span>{game.home.teamName}</span>
+                <Link to={`/match/${game.gameNumber}`} className='team-name home'>
+                    <span>{game.home.name}</span>
                 </Link>
             </Game>
         )
