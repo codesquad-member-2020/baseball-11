@@ -8,11 +8,13 @@ import lombok.ToString;
 @ToString
 public class TeamDto {
 
+    private final int id;
     private final String name;
     private final String user;
 
     @Builder
-    public TeamDto(String name, String user) {
+    public TeamDto(int id, String name, String user) {
+        this.id = id;
         this.name = name;
         this.user = user;
     }

@@ -20,7 +20,7 @@ public class TeamDao {
     }
 
     public TeamDto findAwayTeamById(int id) {
-        String teamInfoSql = "SELECT t.name, u.user_id " +
+        String teamInfoSql = "SELECT t.id, t.name, u.user_id " +
                 "FROM team t " +
                 "LEFT JOIN user u ON t.user_id = u.id LEFT JOIN side s on t.side_id = s.id " +
                 "WHERE t.side_id = 1 " +
@@ -31,7 +31,7 @@ public class TeamDao {
     }
 
     public TeamDto findHomeTeamById(int id) {
-        String teamInfoSql = "SELECT t.name, u.user_id " +
+        String teamInfoSql = "SELECT t.id, t.name, u.user_id " +
                 "FROM team t " +
                 "LEFT JOIN user u ON t.user_id = u.id LEFT JOIN side s on t.side_id = s.id " +
                 "WHERE t.side_id = 2 " +
