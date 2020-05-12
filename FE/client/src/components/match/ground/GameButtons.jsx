@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components';
 import Hitter from './Hitter';
 import { MatchContext } from '../../../store/MatchStore';
@@ -26,6 +26,7 @@ const GameButtonsWrap = styled.div`
 const GameButtons = ({ boxOnHitter, setBoxOnHitter, runners, setRunners }) => {
     const { baseCount, setBaseCount } = useContext(MatchContext);
     const hitSound = effectSound(hitES);
+    let setTimeoutHitter;
 
     const setRunnerAnim = () => {
         const currRunners = [...runners, <Hitter />];
@@ -50,13 +51,19 @@ const GameButtons = ({ boxOnHitter, setBoxOnHitter, runners, setRunners }) => {
     const handleSwingClick = () => {
         hitSound.play();
         setBoxOnHitter(false);
-        setTimeout(() => setBoxOnHitter(true), 2500);
         setRunnerAnim();
+        setTimeoutHitter = setTimeout(() => setBoxOnHitter(true), 2500);
 
         if (baseCount + 1 >= 4) return; // 득점처리
         setBaseCount(baseCount + 1);
     };
 
+    useEffect(() => {
+        return () => {
+            clearTimeout(setTimeoutHitter);
+            setBoxOnHitter(true);
+        }
+    }, []);
 
     return (
         <GameButtonsWrap>
