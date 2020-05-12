@@ -1,9 +1,9 @@
 import React from 'react'
 
 const TPlayer = ({ teamData }) => {
-    const hitters = teamData.teamInfo.map(hitter => {
+    const hitters = teamData.teamInfo.map((hitter, idx) => {
         return (
-            <tr key={hitter.battingOrder}>
+            <tr key={idx}>
                 <td>{hitter.name}</td>
                 <td>{hitter.batterBox}</td>
                 <td>{hitter.hit}</td>
