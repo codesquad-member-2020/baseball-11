@@ -13,7 +13,7 @@ class MatchListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let viewModel = MatchListViewModel()
-    private lazy var delegate = MatchListDelegate(frame: view.frame)
+    private lazy var layoutDelegate = MatchListLayout()
     
     private var networkManager: NetworkManageable?
     
@@ -21,7 +21,7 @@ class MatchListViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.dataSource = viewModel
-        collectionView.delegate = delegate
+        collectionView.delegate = layoutDelegate
 
         configureViewModel()
         configureSession()
@@ -32,6 +32,10 @@ class MatchListViewController: UIViewController {
         guard let indexPath = collectionView.indexPathsForSelectedItems?.first,
             let cell = collectionView.cellForItem(at: indexPath) as? MatchCell else { return }
         cell.state = .waiting
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.reloadData()
     }
 
     private func configureViewModel() {
