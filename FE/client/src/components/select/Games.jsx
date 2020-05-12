@@ -58,6 +58,7 @@ const Games = ({ gameData }) => {
             }
         }
         const isSelected = await dataFetch(url, option);
+
         if (!isSelected) return; // 이미 선택 된 팀 처리
         history.push('/select');
         setSelectGame(Object.assign({ ...selectGame }, { validTeam: true, gameNumber: gameId }))
