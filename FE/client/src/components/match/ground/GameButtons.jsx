@@ -26,7 +26,7 @@ const GameButtonsWrap = styled.div`
 const GameButtons = ({ boxOnHitter, setBoxOnHitter, runners, setRunners }) => {
     const { baseCount, setBaseCount } = useContext(MatchContext);
     const hitSound = effectSound(hitES);
-    let setTimeoutHitter;
+    let timerHitter;
 
     const setRunnerAnim = () => {
         const currRunners = [...runners, <Hitter />];
@@ -52,7 +52,7 @@ const GameButtons = ({ boxOnHitter, setBoxOnHitter, runners, setRunners }) => {
         hitSound.play();
         setBoxOnHitter(false);
         setRunnerAnim();
-        setTimeoutHitter = setTimeout(() => setBoxOnHitter(true), 2500);
+        timerHitter = setTimeout(() => setBoxOnHitter(true), 2500);
 
         if (baseCount + 1 >= 4) return; // 득점처리
         setBaseCount(baseCount + 1);
@@ -60,7 +60,7 @@ const GameButtons = ({ boxOnHitter, setBoxOnHitter, runners, setRunners }) => {
 
     useEffect(() => {
         return () => {
-            clearTimeout(setTimeoutHitter);
+            clearTimeout(timerHitter);
             setBoxOnHitter(true);
         }
     }, []);
