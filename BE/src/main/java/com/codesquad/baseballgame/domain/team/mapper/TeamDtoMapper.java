@@ -10,6 +10,7 @@ public class TeamDtoMapper implements RowMapper<TeamDto> {
 
     public TeamDto mapRow(ResultSet rs, int rowNum) throws SQLException {
         return TeamDto.builder()
+                .id(rs.getInt("id"))
                 .user(rs.getString("user_id"))
                 .name(rs.getString("name"))
                 .build();
