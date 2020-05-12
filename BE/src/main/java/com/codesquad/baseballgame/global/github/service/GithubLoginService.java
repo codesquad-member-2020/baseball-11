@@ -39,6 +39,10 @@ public class GithubLoginService {
         return userDto;
     }
 
+    private void findUserDto(String userId) {
+        userDao.findUserDtoById(userId);
+    }
+
     private MultiValueMap<String, String> requestAccess() {
         MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
         Map<String, String> header = new HashMap<>();
@@ -68,10 +72,6 @@ public class GithubLoginService {
                 new HttpEntity<>(headers), UserDto.class);
 
         return responseEntity.getBody();
-    }
-
-    private void findUserDto(String userId) {
-        userDao.findUserDtoById(userId);
     }
 
     private String getAuthorizationValue(GithubToken githubToken) {

@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS score_board;
 CREATE TABLE user
 (
     id      INT PRIMARY KEY AUTO_INCREMENT,
-    user_id VARCHAR(128)
+    user_id VARCHAR(128) UNIQUE
 );
 
 CREATE TABLE team
