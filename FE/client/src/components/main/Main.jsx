@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import effectSound from '../../utils/effectSound';
 import hitterES from '../../audios/hitterES.mp3';
@@ -53,9 +53,12 @@ const Main = () => {
         <MainWrap>
             <MainInner>
                 <Title>신나는 야구 게임 ~.~</Title>
-                <NavLink to='/select'>
+                <Link to='/select'>
                     <button className='login-btn'>로그인</button>
-                </NavLink>
+                </Link>
+                {/* <a href='https://github.com/login/oauth/authorize/?client_id=4946b46078dcaa5adfa6&scope=user'>
+                    <button className='login-btn'>로그인</button>
+                </a> */}
             </MainInner>
             <Background />
         </MainWrap>
