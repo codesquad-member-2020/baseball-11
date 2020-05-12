@@ -11,10 +11,10 @@ const DetailInfo = () => {
 
     const handleClose = ({ target }) => {
         if (target.dataset.type !== 'contentPanel') return;
-        const showState = { ...showContent };
-        showState[target.dataset.content] = false;
-        setShowContent(Object.assign({ ...showContent }, { ...showState }));
-        setTimeoutPanel = setTimeout(() => setShowPanel(Object.assign({ ...showPanel }, { ...showState })), 1200);
+        const _showContent = { ...showContent };
+        _showContent[target.dataset.content] = false;
+        setShowContent(Object.assign({ ...showContent }, { ..._showContent }));
+        setTimeoutPanel = setTimeout(() => setShowPanel(Object.assign({ ...showPanel }, { ..._showContent })), 1200);
     };
 
     useEffect(() => {
