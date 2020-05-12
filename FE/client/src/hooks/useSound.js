@@ -9,13 +9,15 @@ function useSound(src, volume = 1, fadeoutTime = 0) {
         sound.volume(volume);
         sound.play();
     }
-    soundPlay(src);
-    sound.on('play', () => {
-        const fadeouttime = fadeoutTime;
-        setTimeout(() => sound.fade(volume, 0, fadeouttime), (sound.duration() - sound.seek()) * 1000 - fadeouttime);
-    });
 
-    useEffect(() => soundStop);
+    useEffect(() => {
+        soundPlay(src);
+        sound.on('play', () => {
+            const fadeouttime = fadeoutTime;
+            setTimeout(() => sound.fade(volume, 0, fadeouttime), (sound.duration() - sound.seek()) * 1000 - fadeouttime);
+        });
+        return soundStop;
+    }, []);
 }
 
 export default useSound;
