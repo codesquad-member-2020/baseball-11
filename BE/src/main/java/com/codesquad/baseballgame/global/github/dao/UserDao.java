@@ -25,9 +25,9 @@ public class UserDao {
         this.insertion = new SimpleJdbcInsert(dataSource).withTableName("user");
     }
 
-    public UserDto findUserDtoById(String user_id) {
-        SqlParameterSource nameParameters = new MapSqlParameterSource().addValue("user_id", user_id);
-        String userIdSql = "SELECT user_id FROM user WHERE user_id = :user_id";
+    public UserDto findUserDtoById(String userId) {
+        String userIdSql = "SELECT user_id FROM user WHERE user_id = :userId";
+        SqlParameterSource nameParameters = new MapSqlParameterSource("userId",userId);
         return namedJdbcTemplate.queryForObject(userIdSql, nameParameters, userDtoMapper);
     }
 

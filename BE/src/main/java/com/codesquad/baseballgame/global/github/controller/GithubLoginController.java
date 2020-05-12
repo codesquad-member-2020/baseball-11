@@ -29,6 +29,7 @@ public class GithubLoginController {
         String jwt = JwtUtils.jwtCreate(githubUser);
         Cookie cookie = new Cookie("userId", jwt);
         cookie.setMaxAge(600000);
+        cookie.setPath("/");
         response.addCookie(cookie);
         String user = JwtUtils.jwtParsing(jwt);
 

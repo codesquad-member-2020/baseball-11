@@ -10,6 +10,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
@@ -25,11 +27,15 @@ public class GithubLoginService {
     private final GithubOauthProperty githubOauth;
     private final UserDao userDao;
 
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     public UserDto returnUserId(String code) {
         UserDto userDto = getUserId(code);
-        if (findUserDto(userDto.getUserId()) == null) {
+        try {
+            findUserDto(userDto.getUserId());
+        } catch (RuntimeException e) {
             userDao.saveUserDao(userDto);
         }
+
         return userDto;
     }
 
@@ -64,8 +70,8 @@ public class GithubLoginService {
         return responseEntity.getBody();
     }
 
-    private UserDto findUserDto(String userId) {
-        return userDao.findUserDtoById(userId);
+    private void findUserDto(String userId) {
+        userDao.findUserDtoById(userId);
     }
 
     private String getAuthorizationValue(GithubToken githubToken) {

@@ -20,7 +20,7 @@ public class TeamDao {
     }
 
     public TeamDto findAwayTeamById(int id) {
-        SqlParameterSource nameParameters = new MapSqlParameterSource().addValue("id", id);
+        SqlParameterSource nameParameters = new MapSqlParameterSource("id", id);
         String teamInfoSql = "SELECT t.name, u.user_id " +
                 "FROM team t " +
                 "LEFT JOIN user u ON t.user_id = u.id LEFT JOIN side s on t.side_id = s.id " +
@@ -31,7 +31,7 @@ public class TeamDao {
     }
 
     public TeamDto findHomeTeamById(int id) {
-        SqlParameterSource nameParameters = new MapSqlParameterSource().addValue("id", id);
+        SqlParameterSource nameParameters = new MapSqlParameterSource("id", id);
         String teamInfoSql = "SELECT t.name, u.user_id " +
                 "FROM team t " +
                 "LEFT JOIN user u ON t.user_id = u.id LEFT JOIN side s on t.side_id = s.id " +
