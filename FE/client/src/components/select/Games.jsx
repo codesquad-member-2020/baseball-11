@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Redirect, useHistory } from 'react-router-dom';
+import React from 'react'
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import URL from '../../constants/url';
 import dataFetch from '../../utils/dataFetch';
@@ -45,7 +45,6 @@ const Game = styled.div`
 const Games = ({ gameData }) => {
     const { teamData } = gameData;
     const { BASE, SELECT_TEAM } = URL;
-    const [selectGame, setSelectGame] = useState({ validTeam: false, gameNumber: null });
     const history = useHistory();
 
     const handleSelectTeam = async (teamId, gameId) => {
@@ -60,8 +59,7 @@ const Games = ({ gameData }) => {
         const isSelected = await dataFetch(url, option);
 
         if (!isSelected) return; // 이미 선택 된 팀 처리
-        history.push('/select');
-        setSelectGame(Object.assign({ ...selectGame }, { validTeam: true, gameNumber: gameId }))
+        history.push(`/match/${gameId}`);
     }
 
     const games = teamData.map(game => {
@@ -81,7 +79,6 @@ const Games = ({ gameData }) => {
 
     return (
         <>
-            {selectGame.validTeam && <Redirect to={`/match/${selectGame.gameNumber}`} />}
             {games}
         </>
     )
