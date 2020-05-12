@@ -4,7 +4,7 @@ import * as mock from '../mock/mockData';
 
 export const MatchContext = createContext();
 
-const MatchStore = (props) => {
+const MatchStore = ({ children }) => {
     // 임시 mock 데이터
     const [baseCount, setBaseCount] = useState(mock.baseCount.base);
 
@@ -24,7 +24,7 @@ const MatchStore = (props) => {
                 ...mockData,
                 baseCount, setBaseCount,
             }}>
-            {props.children}
+            {children}
         </MatchContext.Provider >
     )
 }

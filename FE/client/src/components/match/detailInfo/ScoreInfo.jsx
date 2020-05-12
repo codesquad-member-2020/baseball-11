@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
+import { MatchContext } from '../../../store/MatchStore';
+import TScore from './TScore';
 
 const ScoreInfoWrap = styled.div`
     position: absolute;
@@ -71,6 +73,7 @@ const ScoreInfoBox = styled.div`
 `;
 
 const ScoreInfo = ({ showContent }) => {
+    const { detailScore } = useContext(MatchContext);
     const showClassName = showContent.scoreInfo ? 'show-content' : 'hide-content';
 
     return (
@@ -96,32 +99,8 @@ const ScoreInfo = ({ showContent }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>레알마드리드</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>맨유</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>2</td>
-                        </tr>
+                        <TScore scoreData={detailScore.away} />
+                        <TScore scoreData={detailScore.home} />
                     </tbody>
                 </table>
             </ScoreInfoBox>
