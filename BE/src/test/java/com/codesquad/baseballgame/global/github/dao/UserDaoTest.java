@@ -19,10 +19,4 @@ class UserDaoTest {
 
         userDao.saveUserDao(userDto);
     }
-
-    @Test
-    public void 유저찾기() {
-        UserDto userDto = userDao.findUserDtoById("abc");
-        System.out.println(userDto);
-    }
 }
