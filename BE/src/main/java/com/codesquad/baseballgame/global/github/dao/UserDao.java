@@ -25,10 +25,10 @@ public class UserDao {
         this.insertion = new SimpleJdbcInsert(dataSource).withTableName("user");
     }
 
-    public UserDto findUserDtoById(String userId) {
+    public void findUserDtoById(String userId) {
         String userIdSql = "SELECT user_id FROM user WHERE user_id = :userId";
         SqlParameterSource parameters = new MapSqlParameterSource("userId",userId);
-        return namedJdbcTemplate.queryForObject(userIdSql, parameters, userDtoMapper);
+        namedJdbcTemplate.queryForObject(userIdSql, parameters, userDtoMapper);
     }
 
     public Integer findIdByUserId(String userId) {

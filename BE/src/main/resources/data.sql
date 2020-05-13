@@ -1,13 +1,13 @@
-INSERT INTO score_board (game_number, chance, inning, score)
-VALUES (1, 0, 1, 0);
-INSERT INTO score_board (game_number, chance, inning, score)
-VALUES (2, 0, 1, 0);
-INSERT INTO score_board (game_number, chance, inning, score)
-VALUES (3, 0, 1, 0);
-INSERT INTO score_board (game_number, chance, inning, score)
-VALUES (4, 0, 1, 0);
-INSERT INTO score_board (game_number, chance, inning, score)
-VALUES (5, 0, 1, 0);
+INSERT INTO score_board (game_number, chance, inning, score, away_total_score, home_total_score)
+VALUES (1, 0, 1, 0, 0, 0);
+INSERT INTO score_board (game_number, chance, inning, score, away_total_score, home_total_score)
+VALUES (2, 0, 1, 0, 0, 0);
+INSERT INTO score_board (game_number, chance, inning, score, away_total_score, home_total_score)
+VALUES (3, 0, 1, 0, 0, 0);
+INSERT INTO score_board (game_number, chance, inning, score, away_total_score, home_total_score)
+VALUES (4, 0, 1, 0, 0 ,0);
+INSERT INTO score_board (game_number, chance, inning, score, away_total_score, home_total_score)
+VALUES (5, 0, 1, 0, 0, 0);
 
 INSERT INTO side (side)
 VALUES ('away');

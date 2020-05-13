@@ -36,4 +36,10 @@ class TeamDaoTest {
         int number = teamDao.countAllGame();
         assertThat(number).isEqualTo(5);
     }
+
+    @Test
+    public void 팀숫자가져오기() {
+        Integer teamNumber = teamDao.findAwayTeamIdById(1);
+        System.out.println(teamNumber);
+    }
 }

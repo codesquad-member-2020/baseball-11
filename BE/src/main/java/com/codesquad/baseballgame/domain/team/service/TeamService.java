@@ -21,7 +21,7 @@ public class TeamService {
     public TeamDataDto showTeamList() {
         List<TeamSideDto> teamSideDtos = new ArrayList<>();
         for (int i = 0; i < teamDao.countAllGame(); i++) {
-            teamSideDtos.add(makeTeamSideDto(i+1));
+            teamSideDtos.add(makeTeamSideDto(i + 1));
         }
         return new TeamDataDto(teamSideDtos);
     }

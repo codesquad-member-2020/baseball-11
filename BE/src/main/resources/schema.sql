@@ -30,12 +30,14 @@ CREATE TABLE side
 
 CREATE TABLE score_board
 (
-    id          INT PRIMARY KEY AUTO_INCREMENT,
-    game_number INT UNIQUE,
-    user_id     INT REFERENCES user (id),
-    chance      TINYINT,
-    inning      INT,
-    score       INT
+    id               INT PRIMARY KEY AUTO_INCREMENT,
+    game_number      INT UNIQUE,
+    user_id          INT REFERENCES user (id),
+    chance           TINYINT,
+    inning           INT,
+    score            INT,
+    away_total_score INT,
+    home_total_score INT
 );
 
 CREATE TABLE hitter

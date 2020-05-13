@@ -30,6 +30,12 @@ public class TeamDao {
         return namedJdbcTemplate.queryForObject(teamInfoSql, parameters, teamDtoMapper);
     }
 
+    public Integer findAwayTeamIdById(int id) {
+        String teamIdSql = "SELECT t.id FROM team t WHERE t.side_id = 1 AND t.score_board_id = :id";
+        SqlParameterSource parameters = new MapSqlParameterSource("id", id);
+        return namedJdbcTemplate.queryForObject(teamIdSql, parameters, Integer.class);
+    }
+
     public TeamDto findHomeTeamById(int id) {
         String teamInfoSql = "SELECT t.id, t.name, u.user_id " +
                 "FROM team t " +
@@ -39,6 +45,12 @@ public class TeamDao {
         SqlParameterSource parameters = new MapSqlParameterSource("id", id);
 
         return namedJdbcTemplate.queryForObject(teamInfoSql, parameters, teamDtoMapper);
+    }
+
+    public Integer findHomeTeamIdById(int id) {
+        String teamIdSql = "SELECT t.id FROM team t WHERE t.side_id = 2 AND t.score_board_id = :id";
+        SqlParameterSource parameters = new MapSqlParameterSource("id", id);
+        return namedJdbcTemplate.queryForObject(teamIdSql, parameters, Integer.class);
     }
 
     public void saveTeamByUser(int userId, int teamId) {
@@ -52,4 +64,6 @@ public class TeamDao {
         String sql = "SELECT COUNT(DISTINCT score_board_id) FROM team";
         return namedJdbcTemplate.getJdbcTemplate().queryForObject(sql, Integer.class);
     }
+
+
 }
