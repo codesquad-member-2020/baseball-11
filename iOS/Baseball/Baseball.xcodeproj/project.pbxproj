@@ -33,6 +33,7 @@
 		C29800AD2469323F007A6D1D /* MatchesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C29800AC2469323F007A6D1D /* MatchesResponse.json */; };
 		C29800B02469444B007A6D1D /* MatchesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29800AF2469444A007A6D1D /* MatchesUseCase.swift */; };
 		C29B1ECC246BBA390077C1A1 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29B1ECB246BBA390077C1A1 /* NotificationCenterExtension.swift */; };
+		C29B1ECE246C349C0077C1A1 /* NotificationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29B1ECD246C349C0077C1A1 /* NotificationToken.swift */; };
 		C2B842B42469681800448857 /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B842B32469681800448857 /* DimView.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		C29800AC2469323F007A6D1D /* MatchesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MatchesResponse.json; sourceTree = "<group>"; };
 		C29800AF2469444A007A6D1D /* MatchesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesUseCase.swift; sourceTree = "<group>"; };
 		C29B1ECB246BBA390077C1A1 /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtension.swift; sourceTree = "<group>"; };
+		C29B1ECD246C349C0077C1A1 /* NotificationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationToken.swift; sourceTree = "<group>"; };
 		C2B842B32469681800448857 /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 				C29682BF2462B25900758643 /* UIColorExtensions.swift */,
 				C29682D0246802ED00758643 /* ReusableView.swift */,
 				C29B1ECB246BBA390077C1A1 /* NotificationCenterExtension.swift */,
+				C29B1ECD246C349C0077C1A1 /* NotificationToken.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				C29800AB24693187007A6D1D /* URLProtocolMock.swift in Sources */,
 				C29800A524692DC7007A6D1D /* APIRouter.swift in Sources */,
 				C29682D1246802ED00758643 /* ReusableView.swift in Sources */,
+				C29B1ECE246C349C0077C1A1 /* NotificationToken.swift in Sources */,
 				C29800A824692F8A007A6D1D /* DefaultLocation.swift in Sources */,
 				C29800A324692DC7007A6D1D /* Endpoints.swift in Sources */,
 				C29682CD2467FFEF00758643 /* MatchListViewController.swift in Sources */,
