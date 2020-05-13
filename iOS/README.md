@@ -24,6 +24,8 @@ Related issues: [#6][issue6], [#14][issue14], [#22][issue22], and [#27][issue27]
 #### 개선한 사항
 
 * 게임 리스트 화면의 landscape orientation 대응
+* 뷰 업데이트를 바인딩 방식이 아닌 Notification 방식으로 개선
+* removeObserver가 자동으로 호출되도록 개선
 
 
 [pr25]: https://github.com/codesquad-member-2020/baseball-11/pull/25
