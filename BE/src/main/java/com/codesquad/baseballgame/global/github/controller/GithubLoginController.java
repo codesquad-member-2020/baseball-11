@@ -1,6 +1,5 @@
 package com.codesquad.baseballgame.global.github.controller;
 
-import com.codesquad.baseballgame.global.github.dto.GithubToken;
 import com.codesquad.baseballgame.global.github.dto.UserDto;
 import com.codesquad.baseballgame.global.github.service.GithubLoginService;
 import com.codesquad.baseballgame.global.utils.JwtUtils;
