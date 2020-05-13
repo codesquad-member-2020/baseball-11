@@ -8,32 +8,19 @@
 
 import UIKit
 
-protocol ViewModelBinding {
-    associatedtype Key
-    func updateNotify(handler: @escaping (Key) -> Void)
-}
-
-class MatchListViewModel: NSObject, ViewModelBinding {
+class MatchListViewModel: NSObject {
     typealias Key = [Match]?
 
     private var matches: Key = nil {
-        didSet { changeHandler(matches) }
+        didSet { NotificationCenter.default.post(name: .matchesDidUpdate, object: self) }
     }
-
-    private var changeHandler: (Key) -> Void
-
-    init(with matches: Key = nil, handler: @escaping (Key) -> Void = { _ in }) {
-        self.changeHandler = handler
+    
+    init(with matches: Key = nil) {
         self.matches = matches
-        changeHandler(matches)
     }
 
     func update(matches: Key) {
         self.matches = matches
-    }
-
-    func updateNotify(handler: @escaping (Key) -> Void) {
-        self.changeHandler = handler
     }
 }
 
@@ -47,4 +34,8 @@ extension MatchListViewModel: UICollectionViewDataSource {
         cell.match = matches?[indexPath.item]
         return cell
     }
+}
+
+extension Notification.Name {
+    static let matchesDidUpdate = Notification.Name("matchesDidUpdate")
 }

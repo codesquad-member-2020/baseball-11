@@ -32,6 +32,7 @@
 		C29800AB24693187007A6D1D /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29800AA24693187007A6D1D /* URLProtocolMock.swift */; };
 		C29800AD2469323F007A6D1D /* MatchesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C29800AC2469323F007A6D1D /* MatchesResponse.json */; };
 		C29800B02469444B007A6D1D /* MatchesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29800AF2469444A007A6D1D /* MatchesUseCase.swift */; };
+		C29B1ECC246BBA390077C1A1 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29B1ECB246BBA390077C1A1 /* NotificationCenterExtension.swift */; };
 		C2B842B42469681800448857 /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B842B32469681800448857 /* DimView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		C29800AA24693187007A6D1D /* URLProtocolMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		C29800AC2469323F007A6D1D /* MatchesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MatchesResponse.json; sourceTree = "<group>"; };
 		C29800AF2469444A007A6D1D /* MatchesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesUseCase.swift; sourceTree = "<group>"; };
+		C29B1ECB246BBA390077C1A1 /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtension.swift; sourceTree = "<group>"; };
 		C2B842B32469681800448857 /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 			children = (
 				C29682BF2462B25900758643 /* UIColorExtensions.swift */,
 				C29682D0246802ED00758643 /* ReusableView.swift */,
+				C29B1ECB246BBA390077C1A1 /* NotificationCenterExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				C29800A824692F8A007A6D1D /* DefaultLocation.swift in Sources */,
 				C29800A324692DC7007A6D1D /* Endpoints.swift in Sources */,
 				C29682CD2467FFEF00758643 /* MatchListViewController.swift in Sources */,
+				C29B1ECC246BBA390077C1A1 /* NotificationCenterExtension.swift in Sources */,
 				C249744824625CE200E8C517 /* ScoreViewController.swift in Sources */,
 				C24974672462619F00E8C517 /* GameplayView.swift in Sources */,
 				C2B842B42469681800448857 /* DimView.swift in Sources */,

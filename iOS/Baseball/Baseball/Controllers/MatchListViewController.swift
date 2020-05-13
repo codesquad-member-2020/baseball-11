@@ -16,6 +16,7 @@ class MatchListViewController: UIViewController {
     private lazy var layoutDelegate = MatchListLayout()
     
     private var networkManager: NetworkManageable?
+    private var observer: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class MatchListViewController: UIViewController {
         collectionView.dataSource = viewModel
         collectionView.delegate = layoutDelegate
 
-        configureViewModel()
+        configureObserver()
         configureSession()
         configureUseCase()
     }
@@ -37,10 +38,15 @@ class MatchListViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView.reloadData()
     }
-
-    private func configureViewModel() {
-        viewModel.updateNotify { [weak self] _ in
-            DispatchQueue.main.async { self?.collectionView.reloadData() }
+    
+    deinit {
+        guard let observer = observer else { return }
+        NotificationCenter.default.removeObserver(observer)
+    }
+    
+    private func configureObserver() {
+        observer = NotificationCenter.default.addObserver(forName: .matchesDidUpdate) { [weak self] _ in
+            self?.collectionView.reloadData()
         }
     }
 
