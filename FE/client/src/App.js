@@ -5,24 +5,21 @@ import Main from './components/main/Main';
 import Match from './components/match/Match';
 import Select from './components/select/Select';
 import NotFound from './components/NotFound';
-import BaseballStore from './store/BaseballStore';
 
 function App() {
   return (
-    <BaseballStore>
-      <Router>
-        <GlobalStyle />
-        <Switch>
-          <Route exact path='/' component={Main} />
-          <Route path='/select' component={Select} />
-          <Route path='/match/:id' component={Match} />
-          <Route path='/api/githublogin'>
-            <Redirect to='/select' />
-          </Route>
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-    </BaseballStore>
+    <Router>
+      <GlobalStyle />
+      <Switch>
+        <Route exact path='/' component={Main} />
+        <Route path='/select' component={Select} />
+        <Route path='/match/:teamId/:gameId' component={Match} />
+        <Route path='/api/githublogin'>
+          <Redirect to='/select' />
+        </Route>
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
   );
 }
 

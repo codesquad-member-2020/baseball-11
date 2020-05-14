@@ -1,40 +1,45 @@
-import React, { useState, useContext, createContext } from 'react'
+import React, { useState, useReducer, createContext, useEffect } from 'react'
 import useFetch from '../hooks/useFetch';
 import URL from '../constants/url';
-import { BaseballContext } from './BaseballStore';
+import { ballCountReducer, playerListReducer } from '../reducer/MatchReducer';
 
 import * as mock from '../mock/mockData';
 
 export const MatchContext = createContext();
 
-const MatchStore = ({ children }) => {
-    const { teamId, gameId } = useContext(BaseballContext);
+const MatchStore = ({ children, teamId, gameId }) => {
     const { BASE, PLAYER_LIST } = URL;
-    const [playerList, setPlayerList] = useState(null);
-    useFetch(setPlayerList, BASE + PLAYER_LIST(gameId));
+
+    const [playerList, playerListDispatch] = useReducer(playerListReducer, {});
+    const [ballCount, ballCountDispatch] = useReducer(ballCountReducer, {});
+
+    const initPlayerList = (initData) => playerListDispatch({ type: 'INIT_PLAYERLIST', payload: initData });
 
     // 임시 mock 데이터
     const [baseCount, setBaseCount] = useState(mock.baseCount.base);
+    const initBallCount = (initData) => ballCountDispatch({ type: 'INIT_BALLCOUNT', payload: initData });
 
     const mockData = {
         matchLog: mock.matchLog,
-        ballCount: mock.ballCount,
         chance: mock.chance,
         scoreBoard: mock.scoreBoard,
         currentPlayer: mock.currentPlayer,
         detailScore: mock.detailScore,
     }
 
-    const value = {
-        playerList, setPlayerList,
-    }
+    useEffect(() => {
+        initBallCount(mock.ballCount);
+    }, []);
+
+    useFetch(initPlayerList, BASE + PLAYER_LIST(gameId));
 
     return (
         <MatchContext.Provider
             value={{
-                ...mockData,
+                ...mockData, teamId, gameId,
+                playerList, playerListDispatch,
+                ballCount, ballCountDispatch,
                 baseCount, setBaseCount,
-                ...value,
             }}>
             {children}
         </MatchContext.Provider >
