@@ -71,4 +71,10 @@ public class TeamDao {
         return namedJdbcTemplate.queryForObject(countUserSql, parameterSource, Integer.class);
     }
 
+    public boolean isUserEmpty(int teamId) {
+        String sql = "SELECT COUNT(*) FROM team t WHERE t.id = :teamId AND t.user_id IS NOT NULL";
+        SqlParameterSource parameters = new MapSqlParameterSource("teamId", teamId);
+        return namedJdbcTemplate.queryForObject(sql, parameters, Integer.class) == 0;
+    }
+
 }

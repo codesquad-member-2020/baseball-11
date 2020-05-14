@@ -1,11 +1,11 @@
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS team;
 DROP TABLE IF EXISTS side;
+DROP TABLE IF EXISTS score_board;
 DROP TABLE IF EXISTS hitter;
 DROP TABLE IF EXISTS pitcher;
 DROP TABLE IF EXISTS pitch;
 DROP TABLE IF EXISTS ball_count;
-DROP TABLE IF EXISTS score_board;
 
 CREATE TABLE user
 (
@@ -17,9 +17,9 @@ CREATE TABLE team
 (
     id             INT PRIMARY KEY AUTO_INCREMENT,
     name           VARCHAR(16) NOT NULL,
-    side_id        INT REFERENCES side (id),
-    user_id        INT REFERENCES user (id),
-    score_board_id INT REFERENCES score_board (game_number)
+    side_id        INT REFERENCES side (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    user_id        INT REFERENCES user (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    score_board_id INT REFERENCES score_board (game_number) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE side
@@ -31,11 +31,11 @@ CREATE TABLE side
 CREATE TABLE score_board
 (
     id               INT PRIMARY KEY AUTO_INCREMENT,
-    game_number      INT UNIQUE,
+    game_number      INT,
     user_id          INT REFERENCES user (id),
+    side_id          INT REFERENCES side (id),
     chance           TINYINT,
     inning           INT,
-    score            INT,
     away_total_score INT,
     home_total_score INT
 );
