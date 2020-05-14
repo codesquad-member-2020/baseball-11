@@ -61,9 +61,14 @@ public class TeamDao {
     }
 
     public Integer countAllGame() {
-        String sql = "SELECT COUNT(DISTINCT score_board_id) FROM team";
-        return namedJdbcTemplate.getJdbcTemplate().queryForObject(sql, Integer.class);
+        String countGameSql = "SELECT COUNT(DISTINCT score_board_id) FROM team";
+        return namedJdbcTemplate.getJdbcTemplate().queryForObject(countGameSql, Integer.class);
     }
 
+    public Integer countMatchUser(int id) {
+        String countUserSql = "SELECT COUNT(t.user_id) FROM team t WHERE t.score_board_id = :id AND t.user_id IS NOT NULL";
+        SqlParameterSource parameterSource = new MapSqlParameterSource("id", id);
+        return namedJdbcTemplate.queryForObject(countUserSql, parameterSource, Integer.class);
+    }
 
 }

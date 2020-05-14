@@ -42,4 +42,10 @@ class TeamDaoTest {
         Integer teamNumber = teamDao.findAwayTeamIdById(1);
         System.out.println(teamNumber);
     }
+
+    @Test
+    public void 유저수가져오기() {
+        Integer userCount = teamDao.countMatchUser(1);
+        System.out.println(userCount);
+    }
 }
