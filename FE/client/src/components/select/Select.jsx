@@ -57,9 +57,12 @@ const Title = styled.div`
 
 const StateText = styled.div`
     color : #fff;
+    position: relative;
+    top: -10px;
     font-size : 20px;
     font-weight : 600;
     margin-bottom : 20px;
+    z-index: 110;
 `;
 
 const SelectBox = styled.div`
@@ -87,6 +90,7 @@ const LoadingWarp = styled.div`
 const Select = () => {
     const [gameData, setGameData] = useState(null);
     const [ready, setReady] = useState(false);
+    const [stateText, setStateText] = useState('참가할 게임을 선택하세요!');
     const { BASE, GAMES } = URL;
     useFetch(setGameData, BASE + GAMES);
     useSound(SelectBGM, 1.0, 10000);
@@ -96,9 +100,9 @@ const Select = () => {
             <SelectInner>
                 {ready && <LoadingWarp><img src={loading} alt='loading' /></LoadingWarp>}
                 <Title>게임 선택 ^.^</Title>
-                <StateText>참가할 게임을 선택하세요!</StateText>
+                <StateText>{stateText}</StateText>
                 <SelectBox>
-                    {gameData && <Games {...{ gameData, setReady }} />}
+                    {gameData && <Games {...{ gameData, setReady, setStateText }} />}
                 </SelectBox>
             </SelectInner>
             <Background />

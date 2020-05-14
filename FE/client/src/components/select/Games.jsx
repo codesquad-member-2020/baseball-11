@@ -42,7 +42,7 @@ const Game = styled.div`
     }
 `;
 
-const Games = ({ gameData, setReady }) => {
+const Games = ({ gameData, setReady, setStateText }) => {
     const { teamData } = gameData;
     const { BASE, SELECT_TEAM } = URL;
     const history = useHistory();
@@ -57,11 +57,13 @@ const Games = ({ gameData, setReady }) => {
             }
         }
         const isSelected = await dataFetch(url, option);
-
-        if (!isSelected) return; // 이미 선택 된 팀 처리
+        if (!isSelected) return setStateText('이미 선택된 팀입니다. 다른 팀을 선택해주세요!');
+        setStateText('상대를 기다리고 있습니다...');
         setReady(true);
-        // 경기를 시작 할 수 있는지(상대와 매칭이 됐는지) 체크하는 api call
+        // 경기를 시작 할 수 있는지(상대와 매칭이 됐는지) 체크하는 api call - setInverval
         // history.push(`/match/${gameId}`);
+        // games/id/players - 선수명단
+        // games/id - 게임 시작 가능
     }
 
     const games = teamData.map(game => {
