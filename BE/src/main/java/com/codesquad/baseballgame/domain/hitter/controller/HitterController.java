@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/game/{gameId}")
+@RequestMapping("/games/{gameId}")
 public class HitterController {
 
     private final HitterService hitterService;

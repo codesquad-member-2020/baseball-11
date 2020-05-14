@@ -20,30 +20,18 @@ public class HitterService {
 
     public HitterTeamDto showHitterStatus(int id) {
         return HitterTeamDto.builder()
-                .away(buildAwayHitterListDto(id))
-                .home(buildHomeHitterListDto(id))
+                .away(getHitterListDto(teamDao.findAwayTeamIdById(id)))
+                .home(getHitterListDto(teamDao.findHomeTeamIdById(id)))
                 .build();
     }
 
-    private HitterListDto buildAwayHitterListDto(int id) {
-        int awayTeamNumber = teamDao.findAwayTeamIdById(id);
-        HitterListDto awayHitterListDto = hitterDao.findTotalByTeamId(awayTeamNumber);
-        List<HitterInfoDto> awayTeamList = new ArrayList<>();
+    private HitterListDto getHitterListDto(int teamNumber) {
+        HitterListDto hitterListDto = hitterDao.findTotalByTeamId(teamNumber);
+        List<HitterInfoDto> teamList = new ArrayList<>();
         for (int i = 0; i < hitterDao.countHitter(); i++) {
-            awayTeamList.add(hitterDao.findHitterById(awayTeamNumber, i + 1));
+            teamList.add(hitterDao.findHitterById(teamNumber, i + 1));
         }
-        awayHitterListDto.setTeamInfo(awayTeamList);
-        return awayHitterListDto;
-    }
-
-    private HitterListDto buildHomeHitterListDto(int id) {
-        int homeTeamNumber = teamDao.findHomeTeamIdById(id);
-        HitterListDto homeHitterListDto = hitterDao.findTotalByTeamId(homeTeamNumber);
-        List<HitterInfoDto> homeTeamList = new ArrayList<>();
-        for (int i = 0; i < hitterDao.countHitter(); i++) {
-            homeTeamList.add(hitterDao.findHitterById(homeTeamNumber, i + 1));
-        }
-        homeHitterListDto.setTeamInfo(homeTeamList);
-        return homeHitterListDto;
+        hitterListDto.setTeamInfo(teamList);
+        return hitterListDto;
     }
 }
