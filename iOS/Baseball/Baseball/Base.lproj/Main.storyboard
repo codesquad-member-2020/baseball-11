@@ -19,11 +19,11 @@
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="PlayViewController" customModule="Baseball" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lz3-Ps-Bta" customClass="GameplayView" customModule="Baseball" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="312.66666666666669"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="312.66666666666669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="lz3-Ps-Bta" secondAttribute="width" multiplier="1:1.2" id="z4v-IS-ur4"/>
@@ -61,17 +61,17 @@
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="ScoreViewController" customModule="Baseball" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="86.666666666666686" y="357.66666666666669" width="202" height="43"/>
+                                <rect key="frame" x="86.666666666666686" y="384.66666666666669" width="202" height="43"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="408.66666666666669" width="215" height="17"/>
+                                <rect key="frame" x="80" y="435.66666666666669" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -99,7 +99,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBD-qE-whY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME LIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBD-qE-whY">
                                 <rect key="frame" x="101.66666666666669" y="76" width="172" height="30"/>
                                 <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -236,14 +236,28 @@
                                     <constraint firstAttribute="height" constant="60" id="WfB-hz-YVb"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgh-Xe-E0g">
+                                <rect key="frame" x="12" y="71" width="30" height="40"/>
+                                <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="28"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="XvV-PS-3vd" eventType="touchUpInside" id="Dkw-F9-YUy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="backgroundLightBlue"/>
                         <constraints>
                             <constraint firstItem="kAT-QJ-Wpl" firstAttribute="top" secondItem="jPg-iG-TQf" secondAttribute="bottom" constant="32" id="1ze-6G-X8e"/>
+                            <constraint firstItem="hBD-qE-whY" firstAttribute="firstBaseline" secondItem="vgh-Xe-E0g" secondAttribute="firstBaseline" id="4eD-Tf-PwP"/>
                             <constraint firstItem="jPg-iG-TQf" firstAttribute="leading" secondItem="RZF-lU-8b1" secondAttribute="leading" id="7Zu-wy-vLf"/>
                             <constraint firstItem="hBD-qE-whY" firstAttribute="top" secondItem="RZF-lU-8b1" secondAttribute="top" constant="32" id="AKu-bG-MSi"/>
                             <constraint firstItem="RZF-lU-8b1" firstAttribute="trailing" secondItem="kAT-QJ-Wpl" secondAttribute="trailing" id="CX1-gK-7yb"/>
                             <constraint firstItem="RZF-lU-8b1" firstAttribute="trailing" secondItem="jPg-iG-TQf" secondAttribute="trailing" id="IlC-Vr-3da"/>
+                            <constraint firstItem="vgh-Xe-E0g" firstAttribute="leading" secondItem="RZF-lU-8b1" secondAttribute="leading" constant="12" id="JR8-lL-csF"/>
                             <constraint firstItem="hBD-qE-whY" firstAttribute="centerX" secondItem="LYi-FZ-bVj" secondAttribute="centerX" id="OCX-Fg-19m"/>
                             <constraint firstItem="kAT-QJ-Wpl" firstAttribute="leading" secondItem="RZF-lU-8b1" secondAttribute="leading" id="kGD-vV-MYG"/>
                             <constraint firstItem="kAT-QJ-Wpl" firstAttribute="bottom" secondItem="LYi-FZ-bVj" secondAttribute="bottom" id="nYk-kK-dQv"/>
@@ -321,6 +335,7 @@
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="backgroundLightBlue"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="jx5-EO-vme" firstAttribute="top" secondItem="mpH-ng-T7k" secondAttribute="top" constant="12" id="PrH-7W-VxN"/>
                                             <constraint firstItem="jx5-EO-vme" firstAttribute="leading" secondItem="mpH-ng-T7k" secondAttribute="leading" constant="16" id="eJR-lH-viI"/>
@@ -332,6 +347,9 @@
                                                 <color key="value" name="backgroundLightBlue"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wrd-zf-Z2r" appends="YES" id="83Q-XS-JJP"/>
+                                        </connections>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jov-Rd-Esm" customClass="ConvexView" customModule="Baseball" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="55"/>
@@ -363,6 +381,7 @@
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="backgroundLightBlue"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="dff-nP-7uG" secondAttribute="bottom" constant="8" id="DBA-hr-8D4"/>
                                             <constraint firstItem="dff-nP-7uG" firstAttribute="leading" secondItem="jov-Rd-Esm" secondAttribute="leading" constant="16" id="epS-0N-mo0"/>
@@ -374,6 +393,9 @@
                                                 <color key="value" name="backgroundLightBlue"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="52v-t7-y2J" appends="YES" id="hag-lo-a8d"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -398,6 +420,12 @@
                     <navigationItem key="navigationItem" id="yms-A3-qaA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LkI-p3-dXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wrd-zf-Z2r" userLabel="Log In Tap Gesture Recognizer"/>
+                <tapGestureRecognizer id="52v-t7-y2J" userLabel="Game Start Tap Gesture Recognizer">
+                    <connections>
+                        <segue destination="XvV-PS-3vd" kind="show" id="d1L-z8-u4x"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-615.20000000000005" y="0.0"/>
         </scene>
