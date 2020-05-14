@@ -10,9 +10,6 @@ export const ballCountReducer = (ballCount, { type, payload }) => {
 
 export const playerListReducer = (playerList, { type, payload }) => {
     switch (type) {
-        case 'INIT_PLAYERLIST':
-            return payload;
-
         case 'UPDATA_PLAYERLIST':
             return Object.assign({ ...playerList }, { ...payload });
 

@@ -13,8 +13,6 @@ const MatchStore = ({ children, teamId, gameId }) => {
     const [playerList, playerListDispatch] = useReducer(playerListReducer, {});
     const [ballCount, ballCountDispatch] = useReducer(ballCountReducer, {});
 
-    const initPlayerList = (initData) => playerListDispatch({ type: 'INIT_PLAYERLIST', payload: initData });
-
     // 임시 mock 데이터
     const [baseCount, setBaseCount] = useState(mock.baseCount.base);
     const initBallCount = (initData) => ballCountDispatch({ type: 'INIT_BALLCOUNT', payload: initData });
@@ -30,8 +28,6 @@ const MatchStore = ({ children, teamId, gameId }) => {
     useEffect(() => {
         initBallCount(mock.ballCount);
     }, []);
-
-    useFetch(initPlayerList, BASE + PLAYER_LIST(gameId));
 
     return (
         <MatchContext.Provider
