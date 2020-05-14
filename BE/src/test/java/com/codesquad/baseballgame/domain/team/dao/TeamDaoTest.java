@@ -48,4 +48,9 @@ class TeamDaoTest {
         Integer userCount = teamDao.countMatchUser(1);
         System.out.println(userCount);
     }
+
+    @Test
+    public void 팀여부() {
+        System.out.println(teamDao.isUserEmpty(1));
+    }
 }

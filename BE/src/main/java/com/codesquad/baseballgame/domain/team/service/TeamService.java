@@ -4,6 +4,7 @@ import com.codesquad.baseballgame.domain.team.dao.TeamDao;
 import com.codesquad.baseballgame.domain.team.dto.TeamDataDto;
 import com.codesquad.baseballgame.domain.team.dto.TeamDto;
 import com.codesquad.baseballgame.domain.team.dto.TeamSideDto;
+import com.codesquad.baseballgame.domain.team.exception.TeamAlreadySelectedException;
 import com.codesquad.baseballgame.global.error.exception.UserNotFoundException;
 import com.codesquad.baseballgame.global.github.dao.UserDao;
 import lombok.RequiredArgsConstructor;
@@ -31,6 +32,11 @@ public class TeamService {
         if (userDao.countIdByUserId(user) == 0) {
             throw new UserNotFoundException();
         }
+
+        if (!teamDao.isUserEmpty(teamId)) {
+            throw new TeamAlreadySelectedException();
+        }
+
         int userId = userDao.findIdByUserId(user);
         teamDao.saveTeamByUser(userId, teamId);
     }
