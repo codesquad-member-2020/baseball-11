@@ -4,6 +4,7 @@ import com.codesquad.baseballgame.domain.team.dao.TeamDao;
 import com.codesquad.baseballgame.domain.team.dto.TeamDataDto;
 import com.codesquad.baseballgame.domain.team.dto.TeamDto;
 import com.codesquad.baseballgame.domain.team.dto.TeamSideDto;
+import com.codesquad.baseballgame.global.error.exception.UserNotFoundException;
 import com.codesquad.baseballgame.global.github.dao.UserDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,9 @@ public class TeamService {
     }
 
     public void selectTeam(int teamId, String user) {
+        if (userDao.countIdByUserId(user) == 0) {
+            throw new UserNotFoundException();
+        }
         int userId = userDao.findIdByUserId(user);
         teamDao.saveTeamByUser(userId, teamId);
     }

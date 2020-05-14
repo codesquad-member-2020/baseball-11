@@ -11,6 +11,8 @@ import java.util.Map;
 public class JwtUtils {
     private static final String JWT_KEY = "A";
 
+    private JwtUtils() {}
+
     public static String jwtCreate(UserDto user) {
         Map<String, Object> headers = new HashMap<>();
         headers.put("typ", "JWT");

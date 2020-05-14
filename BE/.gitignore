@@ -38,3 +38,4 @@ out/
 /src/main/resources/application-secret.properties
 /src/main/resources/application-github.properties
 /build/generated/
+/src/main/resources/application-local.properties

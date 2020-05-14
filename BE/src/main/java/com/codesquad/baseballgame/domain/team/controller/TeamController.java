@@ -8,9 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/teams")
@@ -24,10 +21,13 @@ public class TeamController {
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<Boolean> selectTeam(@PathVariable int id, HttpServletRequest request) {
-        Cookie userCookie = request.getCookies()[0];
-        String user = JwtUtils.jwtParsing(userCookie.getValue());
+    public ResponseEntity<Boolean> selectTeam(@PathVariable int id,
+                                              @CookieValue(value = "userId", required = false) String userId) {
+        if (userId == null) {
+            return new ResponseEntity<>(false, HttpStatus.UNAUTHORIZED);
+        }
+        String user = JwtUtils.jwtParsing(userId);
         teamService.selectTeam(id, user);
-        return new ResponseEntity<>(true, HttpStatus.OK);
+        return ResponseEntity.ok(true);
     }
 }
