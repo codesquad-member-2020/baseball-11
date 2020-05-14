@@ -1,5 +1,5 @@
 //
-//  GameStartView.swift
+//  ConvexView.swift
 //  Baseball
 //
 //  Created by Chaewan Park on 2020/05/14.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class GameStartView: UIView {
+class ConvexView: UIView {
     
     @IBInspectable var layerColor: UIColor = .clear {
         didSet { configureView() }
