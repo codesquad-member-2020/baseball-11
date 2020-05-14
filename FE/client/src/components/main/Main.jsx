@@ -46,7 +46,7 @@ const Title = styled.div`
 `;
 
 const Main = () => {
-    const hitterSound = effectSound(hitterES);
+    const hitterSound = effectSound(hitterES, 0.7);
     hitterSound.play();
 
     return (
