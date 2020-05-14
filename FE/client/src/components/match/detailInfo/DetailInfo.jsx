@@ -13,13 +13,13 @@ const DetailInfo = () => {
         if (target.dataset.type !== 'contentPanel') return;
         const _showContent = { ...showContent };
         _showContent[target.dataset.content] = false;
-        setShowContent(Object.assign({ ...showContent }, { ..._showContent }));
-        timeoutId.current = setTimeout(() => setShowPanel(Object.assign({ ...showPanel }, { ..._showContent })), 1200);
+        setShowContent({ ...showContent, ..._showContent });
+        timeoutId.current = setTimeout(() => setShowPanel({ ...showPanel, ..._showContent }), 1200);
     };
 
     useEffect(() => {
         return () => {
-            setShowPanel(Object.assign({ ...showPanel }, { ...defaultState }));
+            setShowPanel({ ...showPanel, ...defaultState });
             return clearTimeout(timeoutId.current);
         }
     }, []);
