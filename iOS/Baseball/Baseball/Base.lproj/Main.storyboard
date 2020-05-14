@@ -289,7 +289,7 @@
                                     <constraint firstAttribute="height" constant="60" id="yZF-6v-avp"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpH-ng-T7k" customClass="ConvexView" customModule="Baseball" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpH-ng-T7k" customClass="GameStartView" customModule="Baseball" customModuleProvider="target">
                                 <rect key="frame" x="28" y="633" width="319" height="55"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jx5-EO-vme">
@@ -326,8 +326,8 @@
                                     <constraint firstAttribute="bottom" secondItem="jx5-EO-vme" secondAttribute="bottom" constant="8" id="yP1-ee-Xtl"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layerColor">
+                                        <color key="value" name="backgroundLightBlue"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
