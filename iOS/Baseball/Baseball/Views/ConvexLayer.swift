@@ -15,6 +15,11 @@ class ConvexLayer: CALayer {
         configureLayer()
     }
     
+    override init(layer: Any) {
+        super.init(layer: layer)
+        configureLayer()
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureLayer()

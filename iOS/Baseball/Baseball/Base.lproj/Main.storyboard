@@ -201,7 +201,6 @@
                                                     <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </activityIndicatorView>
                                             </subviews>
-                                            <color key="backgroundColor" name="backgroundLightBlue"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="TNb-1E-pt5" secondAttribute="bottom" constant="8" id="CGw-ie-PXQ"/>
                                                 <constraint firstItem="5zm-5x-pWk" firstAttribute="width" secondItem="3mh-jJ-vct" secondAttribute="width" id="FAt-uI-746"/>
@@ -217,8 +216,8 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="358" height="61"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="15"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layerColor">
+                                                <color key="value" name="backgroundLightBlue"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
