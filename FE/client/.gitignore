@@ -3,6 +3,7 @@
 #src
 /src/mock
 /src/audios
+/src/assets
 
 #public
 /public/images

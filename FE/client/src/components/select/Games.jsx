@@ -42,7 +42,7 @@ const Game = styled.div`
     }
 `;
 
-const Games = ({ gameData }) => {
+const Games = ({ gameData, setReady }) => {
     const { teamData } = gameData;
     const { BASE, SELECT_TEAM } = URL;
     const history = useHistory();
@@ -59,7 +59,9 @@ const Games = ({ gameData }) => {
         const isSelected = await dataFetch(url, option);
 
         if (!isSelected) return; // 이미 선택 된 팀 처리
-        history.push(`/match/${gameId}`);
+        setReady(true);
+        // 경기를 시작 할 수 있는지(상대와 매칭이 됐는지) 체크하는 api call
+        // history.push(`/match/${gameId}`);
     }
 
     const games = teamData.map(game => {
