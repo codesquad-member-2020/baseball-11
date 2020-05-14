@@ -3,9 +3,6 @@ export const ballCountReducer = (ballCount, { type, payload }) => {
         case 'INIT_BALLCOUNT':
             return payload;
 
-        case 'UPDATA_BALLCOUNT':
-            return payload;
-
         default:
             break;
     }
@@ -17,7 +14,7 @@ export const playerListReducer = (playerList, { type, payload }) => {
             return payload;
 
         case 'UPDATA_PLAYERLIST':
-            return payload;
+            return Object.assign({ ...playerList }, { ...payload });
 
         default:
             break;
