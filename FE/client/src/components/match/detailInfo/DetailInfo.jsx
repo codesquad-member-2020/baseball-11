@@ -7,22 +7,14 @@ const DetailInfo = () => {
     const defaultState = { scoreInfo: false, playerInfo: false };
     const [showPanel, setShowPanel] = useState(defaultState);
     const [showContent, setShowContent] = useState(defaultState);
-    let timerPanel;
 
     const handleClose = ({ target }) => {
         if (target.dataset.type !== 'contentPanel') return;
         const _showContent = { ...showContent };
         _showContent[target.dataset.content] = false;
         setShowContent(Object.assign({ ...showContent }, { ..._showContent }));
-        timerPanel = setTimeout(() => setShowPanel(Object.assign({ ...showPanel }, { ..._showContent })), 1200);
+        setTimeout(() => setShowPanel(Object.assign({ ...showPanel }, { ..._showContent })), 1200);
     };
-
-    useEffect(() => {
-        return () => {
-            clearTimeout(timerPanel);
-            setShowPanel(defaultState);
-        }
-    }, []);
 
     return (
         <>
