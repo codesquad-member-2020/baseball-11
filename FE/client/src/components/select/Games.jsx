@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import URL from '../../constants/url';
 import dataFetch from '../../utils/dataFetch';
+import effectSound from '../../utils/effectSound';
+import readyES from '../../audios/readyES.mp3';
 
 const Game = styled.div`
     position : relative;
@@ -45,32 +47,41 @@ const Game = styled.div`
 const Games = ({ gameData, setReady, setStateText }) => {
     const { teamData } = gameData;
     const { BASE, SELECT_TEAM, SELECT_GAME } = URL;
+    const readySound = effectSound(readyES);
     const history = useHistory();
+    const intervalId = useRef();
+
+    const fetchOption = {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            Cookie: process.env.REACT_APP_TEMP_COOKIE
+        }
+    }
 
     const handleSelectTeam = async (teamId, gameId) => {
         const teamUrl = BASE + SELECT_TEAM + teamId;
         const gameUrl = BASE + SELECT_GAME + gameId;
-        const option = {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                Cookie: process.env.REACT_APP_TEMP_COOKIE
-            }
-        }
-        const isSelected = await dataFetch(teamUrl, option);
+        const isSelected = await dataFetch(teamUrl, fetchOption);
         if (!isSelected) return setStateText('이미 선택된 팀입니다. 다른 팀을 선택해주세요!');
         setStateText('상대를 기다리고 있습니다...');
         setReady(true);
 
-        setInterval(async () => {
-            const test = await dataFetch(gameUrl, option);
-            console.log(test);
-        }, 1500);
-
-        // 경기를 시작 할 수 있는지(상대와 매칭이 됐는지) 체크하는 api call - setInverval
-        // 체크 api call 후 true 받으면 경기 화면으로
-        // history.push(`/match/${teamId}/${gameId}`);
+        intervalId.current = setInterval(async () => {
+            const isStart = await dataFetch(gameUrl, fetchOption);
+            if (!isStart) return;
+            clearInterval(intervalId.current);
+            setStateText('GET READY FOR THE NEXT BATTLE');
+            readySound.play();
+            setTimeout(() => {
+                history.push(`/match/${teamId}/${gameId}`);
+            }, 4000);
+        }, 2000);
     }
+
+    useEffect(() => {
+        return () => clearInterval(intervalId.current);
+    }, []);
 
     const games = teamData.map(game => {
         return (

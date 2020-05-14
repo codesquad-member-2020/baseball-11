@@ -93,7 +93,7 @@ const Select = () => {
     const [stateText, setStateText] = useState('참가할 게임을 선택하세요!');
     const { BASE, GAMES } = URL;
     useFetch(setGameData, BASE + GAMES);
-    useSound(SelectBGM, 1.0, 10000);
+    useSound(SelectBGM, 0.5, 10000);
 
     return (
         <SelectWrap>
