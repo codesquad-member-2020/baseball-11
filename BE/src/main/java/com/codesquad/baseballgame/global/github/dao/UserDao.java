@@ -37,6 +37,12 @@ public class UserDao {
         return namedJdbcTemplate.queryForObject(idSql, parameters, Integer.class);
     }
 
+    public Integer countIdByUserId(String userId) {
+        String countIdSql = "SELECT COUNT(*) FROM user WHERE user_id = :userId";
+        SqlParameterSource parameters = new MapSqlParameterSource("userId", userId);
+        return namedJdbcTemplate.queryForObject(countIdSql, parameters, Integer.class);
+    }
+
     public void saveUserDao(UserDto userDto) {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("user_id", userDto.getUserId());
