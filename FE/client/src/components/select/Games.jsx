@@ -62,7 +62,8 @@ const Games = ({ gameData, setReady, setStateText }) => {
         setReady(true);
 
         // 경기를 시작 할 수 있는지(상대와 매칭이 됐는지) 체크하는 api call - setInverval
-        history.push(`/match/${teamId}/${gameId}`); // 체크 api call 후 true 받으면 경기 화면으로
+        // 체크 api call 후 true 받으면 경기 화면으로
+        history.push(`/match/${teamId}/${gameId}`);
     }
 
     const games = teamData.map(game => {
