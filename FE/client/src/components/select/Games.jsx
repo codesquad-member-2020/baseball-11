@@ -44,11 +44,12 @@ const Game = styled.div`
 
 const Games = ({ gameData, setReady, setStateText }) => {
     const { teamData } = gameData;
-    const { BASE, SELECT_TEAM } = URL;
+    const { BASE, SELECT_TEAM, SELECT_GAME } = URL;
     const history = useHistory();
 
     const handleSelectTeam = async (teamId, gameId) => {
-        const url = BASE + SELECT_TEAM + teamId;
+        const teamUrl = BASE + SELECT_TEAM + teamId;
+        const gameUrl = BASE + SELECT_GAME + gameId;
         const option = {
             method: 'POST',
             credentials: 'include',
@@ -56,14 +57,19 @@ const Games = ({ gameData, setReady, setStateText }) => {
                 Cookie: process.env.REACT_APP_TEMP_COOKIE
             }
         }
-        const isSelected = await dataFetch(url, option);
+        const isSelected = await dataFetch(teamUrl, option);
         if (!isSelected) return setStateText('이미 선택된 팀입니다. 다른 팀을 선택해주세요!');
         setStateText('상대를 기다리고 있습니다...');
         setReady(true);
 
+        setInterval(async () => {
+            const test = await dataFetch(gameUrl, option);
+            console.log(test);
+        }, 1500);
+
         // 경기를 시작 할 수 있는지(상대와 매칭이 됐는지) 체크하는 api call - setInverval
         // 체크 api call 후 true 받으면 경기 화면으로
-        history.push(`/match/${teamId}/${gameId}`);
+        // history.push(`/match/${teamId}/${gameId}`);
     }
 
     const games = teamData.map(game => {
