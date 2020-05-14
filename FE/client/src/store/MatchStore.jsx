@@ -8,13 +8,11 @@ import * as mock from '../mock/mockData';
 export const MatchContext = createContext();
 
 const MatchStore = ({ children, teamId, gameId }) => {
-    const { BASE, PLAYER_LIST } = URL;
-
     const [playerList, playerListDispatch] = useReducer(playerListReducer, {});
-    const [ballCount, ballCountDispatch] = useReducer(ballCountReducer, {});
 
     // 임시 mock 데이터
     const [baseCount, setBaseCount] = useState(mock.baseCount.base);
+    const [ballCount, ballCountDispatch] = useReducer(ballCountReducer, {});
     const initBallCount = (initData) => ballCountDispatch({ type: 'INIT_BALLCOUNT', payload: initData });
 
     const mockData = {
