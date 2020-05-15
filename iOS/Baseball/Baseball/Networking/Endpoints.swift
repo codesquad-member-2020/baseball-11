@@ -9,7 +9,10 @@
 import Foundation
 
 class Endpoints {
-    static let baseURL = "https://github.com"
+    static let baseURL = "http://13.209.254.74/api"
+    
+    static let authURL = "https://github.com/login/oauth/authorize"
     
     static let matches = "\(baseURL)/matches"
+    static let login = "\(baseURL)/ioslogin"
 }
