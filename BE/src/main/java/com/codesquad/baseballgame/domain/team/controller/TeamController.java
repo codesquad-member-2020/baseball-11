@@ -26,8 +26,6 @@ public class TeamController {
         if (userId == null) {
             return new ResponseEntity<>(false, HttpStatus.UNAUTHORIZED);
         }
-        String user = JwtUtils.jwtParsing(userId);
-        teamService.selectTeam(id, user);
-        return ResponseEntity.ok(true);
+        return ResponseEntity.ok(teamService.selectTeam(id, JwtUtils.jwtParsing(userId)));
     }
 }
