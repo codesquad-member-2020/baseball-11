@@ -28,17 +28,18 @@ public class TeamService {
         return new TeamDataDto(teamSideDtos);
     }
 
-    public void selectTeam(int teamId, String user) {
+    public Boolean selectTeam(int teamId, String user) {
         if (userDao.countIdByUserId(user) == 0) {
             throw new UserNotFoundException();
         }
 
         if (!teamDao.isUserEmpty(teamId)) {
-            throw new TeamAlreadySelectedException();
+            return false;
         }
 
         int userId = userDao.findIdByUserId(user);
         teamDao.saveTeamByUser(userId, teamId);
+        return true;
     }
 
     private TeamSideDto makeTeamSideDto(int id) {
