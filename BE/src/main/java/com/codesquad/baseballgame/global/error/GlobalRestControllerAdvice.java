@@ -1,5 +1,6 @@
 package com.codesquad.baseballgame.global.error;
 
+import com.codesquad.baseballgame.domain.team.exception.TeamAlreadySelectedException;
 import com.codesquad.baseballgame.global.error.exception.UserNotFoundException;
 import io.jsonwebtoken.JwtException;
 import lombok.extern.slf4j.Slf4j;
@@ -22,5 +23,11 @@ public class GlobalRestControllerAdvice {
     protected  ResponseEntity<String> userNotFoundExceptionHandler(UserNotFoundException e) {
         log.error("Handle UserNotFoundException:", e);
         return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(TeamAlreadySelectedException.class)
+    protected ResponseEntity<Boolean> teamAlreadySelectedHandler(TeamAlreadySelectedException e) {
+        log.error("Handle TeamAlreadySelectedException:", e);
+        return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
     }
 }

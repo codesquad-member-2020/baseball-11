@@ -17,7 +17,7 @@ public class ScoreBoardDao {
         this.namedJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
-    public ScoreBoardInningDto findInningById(int id) {
-        String inningSql = ""
-    }
+//    public ScoreBoardInningDto findInningById(int id) {
+//        String inningSql = ""
+//    }
 }

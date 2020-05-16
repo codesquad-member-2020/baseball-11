@@ -34,11 +34,12 @@ public class TeamService {
         }
 
         if (!teamDao.isUserEmpty(teamId)) {
-            return false;
+            throw new TeamAlreadySelectedException();
         }
 
         int userId = userDao.findIdByUserId(user);
         teamDao.saveTeamByUser(userId, teamId);
+
         return true;
     }
 
