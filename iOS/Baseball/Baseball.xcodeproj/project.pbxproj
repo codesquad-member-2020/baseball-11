@@ -10,6 +10,7 @@
 		C20B741E246E6E3B00AA9609 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B741D246E6E3B00AA9609 /* LoginUseCase.swift */; };
 		C20B7420246E719500AA9609 /* LogInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B741F246E719500AA9609 /* LogInManager.swift */; };
 		C20BEFD7246FDB2700358A8E /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BEFD6246FDB2700358A8E /* Authentication.swift */; };
+		C20BEFD9246FDD0B00358A8E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BEFD8246FDD0B00358A8E /* LoginView.swift */; };
 		C249744224625CE200E8C517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249744124625CE200E8C517 /* AppDelegate.swift */; };
 		C249744424625CE200E8C517 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249744324625CE200E8C517 /* SceneDelegate.swift */; };
 		C249744624625CE200E8C517 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249744524625CE200E8C517 /* PlayViewController.swift */; };
@@ -58,6 +59,7 @@
 		C20B741D246E6E3B00AA9609 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		C20B741F246E719500AA9609 /* LogInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInManager.swift; sourceTree = "<group>"; };
 		C20BEFD6246FDB2700358A8E /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		C20BEFD8246FDD0B00358A8E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C249743E24625CE200E8C517 /* Baseball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baseball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C249744124625CE200E8C517 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C249744324625CE200E8C517 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				C29B1ECF246CDB000077C1A1 /* ConvexView.swift */,
 				C29B1ED1246D1A560077C1A1 /* ConvexLayer.swift */,
 				C2B842B32469681800448857 /* DimView.swift */,
+				C20BEFD8246FDD0B00358A8E /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				C249744624625CE200E8C517 /* PlayViewController.swift in Sources */,
 				C29B1ED0246CDB000077C1A1 /* ConvexView.swift in Sources */,
 				C29682C02462B25900758643 /* UIColorExtensions.swift in Sources */,
+				C20BEFD9246FDD0B00358A8E /* LoginView.swift in Sources */,
 				C249744224625CE200E8C517 /* AppDelegate.swift in Sources */,
 				C249744424625CE200E8C517 /* SceneDelegate.swift in Sources */,
 				C29800A424692DC7007A6D1D /* NetworkManager.swift in Sources */,

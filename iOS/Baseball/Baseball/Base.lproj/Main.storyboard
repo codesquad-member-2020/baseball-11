@@ -302,8 +302,8 @@
                                     <constraint firstAttribute="height" constant="60" id="yZF-6v-avp"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2kU-6m-8bu">
-                                <rect key="frame" x="28" y="578" width="319" height="110"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2kU-6m-8bu" customClass="LoginView" customModule="Baseball" customModuleProvider="target">
+                                <rect key="frame" x="28" y="633" width="319" height="55"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpH-ng-T7k" customClass="ConvexView" customModule="Baseball" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="55"/>
@@ -351,8 +351,8 @@
                                             <outletCollection property="gestureRecognizers" destination="wrd-zf-Z2r" appends="YES" id="83Q-XS-JJP"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jov-Rd-Esm" customClass="ConvexView" customModule="Baseball" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55" width="319" height="55"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jov-Rd-Esm" customClass="ConvexView" customModule="Baseball" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="55"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dff-nP-7uG">
                                                 <rect key="frame" x="16" y="12" width="287" height="35"/>
@@ -398,6 +398,10 @@
                                         </connections>
                                     </view>
                                 </subviews>
+                                <connections>
+                                    <outlet property="gameStartView" destination="jov-Rd-Esm" id="xYi-E4-LJK"/>
+                                    <outlet property="loginView" destination="mpH-ng-T7k" id="lGJ-SS-YZy"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="backgroundLightBlue"/>
