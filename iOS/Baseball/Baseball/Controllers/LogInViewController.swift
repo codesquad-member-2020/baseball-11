@@ -15,8 +15,8 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func logIn(_ sender: Any) {
-        LoginUseCase.requestOAuth(with: LogInManager()) { [weak self] token in
-            print(token)
+        LoginUseCase.requestOAuth(with: LogInManager()) {
+            Authentication.shared.token = $0
         }
     }
 }
