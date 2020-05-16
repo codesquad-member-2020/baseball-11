@@ -10,6 +10,8 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    @IBOutlet weak var logInView: LoginView!
+    
     private let viewModel = LogInViewModel()
     
     override func viewDidLoad() {
@@ -26,6 +28,9 @@ class LogInViewController: UIViewController {
     }
     
     private func configureViewModel() {
-        
+        viewModel.updateNotify { [weak self] in
+            guard let authInfo = $0 else { return }
+            self?.logInView.updateView(with: authInfo)
+        }
     }
 }

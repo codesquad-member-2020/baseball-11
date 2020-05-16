@@ -422,6 +422,9 @@
                         <viewLayoutGuide key="safeArea" id="T9o-eQ-Oe2"/>
                     </view>
                     <navigationItem key="navigationItem" id="yms-A3-qaA"/>
+                    <connections>
+                        <outlet property="logInView" destination="2kU-6m-8bu" id="lYw-ff-CwS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LkI-p3-dXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="wrd-zf-Z2r" userLabel="Log In Tap Gesture Recognizer">
