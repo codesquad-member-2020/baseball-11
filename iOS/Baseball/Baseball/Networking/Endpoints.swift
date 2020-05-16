@@ -14,5 +14,4 @@ class Endpoints {
     static let authURL = "https://github.com/login/oauth/authorize"
     
     static let matches = "\(baseURL)/matches"
-    static let login = "\(baseURL)/ioslogin"
 }

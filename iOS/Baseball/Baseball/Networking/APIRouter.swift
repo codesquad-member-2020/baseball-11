@@ -19,15 +19,15 @@ enum APIRouter: APIBuilder {
 }
 
 enum LogInRouter: APIBuilder {
-    case auth(clientId: String)
+    case auth(clientID: String)
     
     var path: String {
         return Endpoints.authURL
     }
     
-    var query: String {
+    var query: String? {
         switch self {
-        case let .auth(clientId: id): return "client_id=\(id)"
+        case let .auth(clientID: id): return "client_id=\(id)"
         }
     }
 }
