@@ -100,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME LIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBD-qE-whY">
-                                <rect key="frame" x="101.66666666666669" y="76" width="172" height="30"/>
+                                <rect key="frame" x="114.66666666666669" y="76" width="146" height="34.666666666666657"/>
                                 <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-iG-TQf">
-                                <rect key="frame" x="0.0" y="122" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="126.66666666666669" width="375" height="593.33333333333326"/>
                                 <color key="backgroundColor" name="backgroundLightBlue"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W8X-Fo-hNm">
                                     <size key="itemSize" width="375" height="128"/>
@@ -135,16 +135,16 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Scj-31-vUq">
-                                                            <rect key="frame" x="41.999999999999993" y="7" width="111.33333333333331" height="38"/>
+                                                            <rect key="frame" x="41.999999999999993" y="1.3333333333333321" width="116.33333333333331" height="43.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkH-go-T2N">
-                                                                    <rect key="frame" x="34" y="0.0" width="43.333333333333343" height="14"/>
+                                                                    <rect key="frame" x="41.666666666666671" y="0.0" width="32.666666666666671" height="16.333333333333332"/>
                                                                     <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Team1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vEI-Vg-khw">
-                                                                    <rect key="frame" x="0.0" y="18" width="111.33333333333333" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="20.333333333333336" width="116.33333333333333" height="23.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -155,22 +155,22 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvZ-nc-YY5">
-                                                            <rect key="frame" x="159.33333333333334" y="28" width="27" height="17"/>
+                                                            <rect key="frame" x="164.33333333333334" y="25" width="17" height="20"/>
                                                             <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DHc-d5-SDn">
-                                                            <rect key="frame" x="192.33333333333334" y="7" width="111.00000000000003" height="38"/>
+                                                            <rect key="frame" x="187.33333333333334" y="1.3333333333333321" width="116.00000000000003" height="43.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ea-Pn-2fk">
-                                                                    <rect key="frame" x="33" y="0.0" width="44.666666666666657" height="14"/>
+                                                                    <rect key="frame" x="40.333333333333314" y="0.0" width="35.333333333333343" height="16.333333333333332"/>
                                                                     <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Team2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tLl-mZ-teS">
-                                                                    <rect key="frame" x="0.0" y="18" width="111" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="20.333333333333336" width="116" height="23.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -237,7 +237,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgh-Xe-E0g">
-                                <rect key="frame" x="12" y="71" width="30" height="40"/>
+                                <rect key="frame" x="12" y="71" width="30" height="45"/>
                                 <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="28"/>
                                 <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="&lt;">
@@ -274,16 +274,16 @@
             </objects>
             <point key="canvasLocation" x="175.19999999999999" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="L6Q-g4-ON5">
             <objects>
-                <viewController id="1C2-Nl-5m9" sceneMemberID="viewController">
+                <viewController id="1C2-Nl-5m9" customClass="LogInViewController" customModule="Baseball" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aEY-OI-fZ0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPER MARIO BASEBALL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0E-BI-uWm">
-                                <rect key="frame" x="16" y="108" width="343" height="70"/>
+                                <rect key="frame" x="16" y="108" width="343" height="81.333333333333314"/>
                                 <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -302,7 +302,7 @@
                                     <constraint firstAttribute="height" constant="60" id="yZF-6v-avp"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2kU-6m-8bu">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2kU-6m-8bu" customClass="LoginView" customModule="Baseball" customModuleProvider="target">
                                 <rect key="frame" x="28" y="633" width="319" height="55"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpH-ng-T7k" customClass="ConvexView" customModule="Baseball" customModuleProvider="target">
@@ -319,7 +319,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="LOG IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5N-df-gdt">
-                                                        <rect key="frame" x="31.666666666666671" y="6" width="226.66666666666663" height="23"/>
+                                                        <rect key="frame" x="31.666666666666671" y="4" width="226.66666666666663" height="27"/>
                                                         <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -365,7 +365,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="GAME START" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH1-eP-y99">
-                                                        <rect key="frame" x="31.666666666666671" y="6" width="226.66666666666663" height="23"/>
+                                                        <rect key="frame" x="31.666666666666671" y="4" width="226.66666666666663" height="27"/>
                                                         <fontDescription key="fontDescription" name="SuperMarioGalaxy" family="Super Mario 256" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -398,6 +398,10 @@
                                         </connections>
                                     </view>
                                 </subviews>
+                                <connections>
+                                    <outlet property="gameStartView" destination="jov-Rd-Esm" id="xYi-E4-LJK"/>
+                                    <outlet property="loginView" destination="mpH-ng-T7k" id="lGJ-SS-YZy"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="backgroundLightBlue"/>
@@ -418,9 +422,16 @@
                         <viewLayoutGuide key="safeArea" id="T9o-eQ-Oe2"/>
                     </view>
                     <navigationItem key="navigationItem" id="yms-A3-qaA"/>
+                    <connections>
+                        <outlet property="logInView" destination="2kU-6m-8bu" id="lYw-ff-CwS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LkI-p3-dXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="wrd-zf-Z2r" userLabel="Log In Tap Gesture Recognizer"/>
+                <tapGestureRecognizer id="wrd-zf-Z2r" userLabel="Log In Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="logIn:" destination="1C2-Nl-5m9" id="0Rl-aF-grs"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <tapGestureRecognizer id="52v-t7-y2J" userLabel="Game Start Tap Gesture Recognizer">
                     <connections>
                         <segue destination="XvV-PS-3vd" kind="show" id="d1L-z8-u4x"/>

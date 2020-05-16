@@ -17,3 +17,17 @@ enum APIRouter: APIBuilder {
         }
     }
 }
+
+enum LogInRouter: APIBuilder {
+    case auth(clientID: String)
+    
+    var path: String {
+        return Endpoints.authURL
+    }
+    
+    var query: String? {
+        switch self {
+        case let .auth(clientID: id): return "client_id=\(id)"
+        }
+    }
+}
