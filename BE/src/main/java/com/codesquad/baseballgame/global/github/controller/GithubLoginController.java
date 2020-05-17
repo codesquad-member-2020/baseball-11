@@ -25,13 +25,6 @@ public class GithubLoginController {
     @GetMapping("/githublogin")
     public ResponseEntity<String> oauth(@RequestParam("code") String code,
                                         HttpServletRequest request,
-                                   HttpServletResponse response) {
-        return buildCookieResponseEntity(code, request, response);
-    }
-
-    @GetMapping("/ioslogin")
-    public ResponseEntity<String> iosOauth(@RequestParam("code") String code,
-                                           HttpServletRequest request,
                                         HttpServletResponse response) {
         return buildCookieResponseEntity(code, request, response);
     }
@@ -45,13 +38,11 @@ public class GithubLoginController {
         cookie.setMaxAge(60 * 10);
         cookie.setPath("/");
         response.addCookie(cookie);
-        if (!request.getHeader("User-Agent").contains("Phone")) {
-            response.setHeader("Location", "http://13.209.254.74/select");
-        } else {
-            log.info("############### Hi I'm iPhone");
+        if (request.getHeader("User-Agent").contains("Phone")) {
             response.setHeader("Location", "baseball://?token=" + jwt);
         }
 
+        response.setHeader("Location", "http://13.209.254.74/select");
         String user = JwtUtils.jwtParsing(jwt);
 
         return new ResponseEntity<>(user, HttpStatus.FOUND);
