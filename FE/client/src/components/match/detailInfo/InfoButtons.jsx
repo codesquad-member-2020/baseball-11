@@ -29,8 +29,8 @@ const InfoButtons = ({ showContent, setShowPanel, setShowContent }) => {
 
     return (
         <InfoButtonsWrap>
-            <button onClick={() => handleShowScoreInfo(Object.assign({ ...showContent }, { scoreInfo: true }))}>상세 점수</button>
-            <button onClick={() => handleShowScoreInfo(Object.assign({ ...showContent }, { playerInfo: true }))}>선수 명단</button>
+            <button onClick={() => handleShowScoreInfo({ ...showContent, scoreInfo: true })}>상세 점수</button>
+            <button onClick={() => handleShowScoreInfo({ ...showContent, playerInfo: true })}>선수 명단</button>
         </InfoButtonsWrap>
     )
 }

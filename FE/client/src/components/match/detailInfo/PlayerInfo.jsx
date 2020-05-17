@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
+import useFetch from '../../../hooks/useFetch';
 import styled from 'styled-components';
 import { MatchContext } from '../../../store/MatchStore';
 import TPlayer from './TPlayer';
+import URL from '../../../constants/url';
 
 const PlayerInfoWrap = styled.div`
     position: absolute;
@@ -80,15 +82,21 @@ const CenterLine = styled.div`
 `;
 
 const PlayerInfo = ({ showContent }) => {
-    const { playerList } = useContext(MatchContext);
+    const { gameId, playerList, playerListDispatch } = useContext(MatchContext);
+    const { BASE, PLAYER_LIST } = URL;
     const showClassName = showContent.playerInfo ? 'show-content' : 'hide-content';
+    const updataPlayerList = (data) => playerListDispatch({ type: 'UPDATA_PLAYERLIST', payload: data });
+    const loading = useFetch(updataPlayerList, BASE + PLAYER_LIST(gameId));
 
     return (
         <PlayerInfoWrap data-type='contentPanel' data-content='playerInfo'>
             <PlayerInfoBox className={showClassName}>
-                <TPlayer teamData={playerList.away} />
-                <CenterLine />
-                <TPlayer teamData={playerList.home} />
+                {!loading &&
+                    <>
+                        <TPlayer teamData={playerList.away} />
+                        <CenterLine />
+                        <TPlayer teamData={playerList.home} />
+                    </>}
             </PlayerInfoBox>
         </PlayerInfoWrap>
     )

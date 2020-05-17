@@ -46,19 +46,19 @@ const Title = styled.div`
 `;
 
 const Main = () => {
-    const hitterSound = effectSound(hitterES);
+    const hitterSound = effectSound(hitterES, 0.7);
     hitterSound.play();
 
     return (
         <MainWrap>
             <MainInner>
                 <Title>신나는 야구 게임 ~.~</Title>
-                <Link to='/select'>
+                {/* <Link to='/select'>
                     <button className='login-btn'>로그인</button>
-                </Link>
-                {/* <a href='https://github.com/login/oauth/authorize/?client_id=4946b46078dcaa5adfa6&scope=user'>
+                </Link> */}
+                <a href='https://github.com/login/oauth/authorize/?client_id=4946b46078dcaa5adfa6&scope=user'>
                     <button className='login-btn'>로그인</button>
-                </a> */}
+                </a>
             </MainInner>
             <Background />
         </MainWrap>

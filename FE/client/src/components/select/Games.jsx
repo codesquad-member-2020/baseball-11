@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
-import { Redirect, useHistory } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react'
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import URL from '../../constants/url';
 import dataFetch from '../../utils/dataFetch';
+import effectSound from '../../utils/effectSound';
+import readyES from '../../audios/readyES.mp3';
 
 const Game = styled.div`
     position : relative;
@@ -42,27 +44,44 @@ const Game = styled.div`
     }
 `;
 
-const Games = ({ gameData }) => {
+const Games = ({ gameData, setReady, setStateText }) => {
     const { teamData } = gameData;
-    const { BASE, SELECT_TEAM } = URL;
-    const [selectGame, setSelectGame] = useState({ validTeam: false, gameNumber: null });
+    const { BASE, SELECT_TEAM, SELECT_GAME } = URL;
+    const readySound = effectSound(readyES);
     const history = useHistory();
+    const intervalId = useRef();
+
+    const fetchOption = {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            Cookie: process.env.REACT_APP_TEMP_COOKIE
+        }
+    }
 
     const handleSelectTeam = async (teamId, gameId) => {
-        const url = BASE + SELECT_TEAM + teamId;
-        const option = {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                Cookie: process.env.REACT_APP_TEMP_COOKIE
-            }
-        }
-        const isSelected = await dataFetch(url, option);
+        const teamUrl = BASE + SELECT_TEAM + teamId;
+        const gameUrl = BASE + SELECT_GAME + gameId;
+        const isSelected = await dataFetch(teamUrl, fetchOption);
+        if (!isSelected) return setStateText('이미 선택된 팀입니다. 다른 팀을 선택해주세요!');
+        setStateText('상대를 기다리고 있습니다...');
+        setReady(true);
 
-        if (!isSelected) return; // 이미 선택 된 팀 처리
-        history.push('/select');
-        setSelectGame(Object.assign({ ...selectGame }, { validTeam: true, gameNumber: gameId }))
+        intervalId.current = setInterval(async () => {
+            const isStart = await dataFetch(gameUrl, fetchOption);
+            if (!isStart) return;
+            clearInterval(intervalId.current);
+            setStateText('GET READY FOR THE NEXT BATTLE');
+            readySound.play();
+            setTimeout(() => {
+                history.push(`/match/${teamId}/${gameId}`);
+            }, 4000);
+        }, 2000);
     }
+
+    useEffect(() => {
+        return () => clearInterval(intervalId.current);
+    }, []);
 
     const games = teamData.map(game => {
         return (
@@ -81,7 +100,6 @@ const Games = ({ gameData }) => {
 
     return (
         <>
-            {selectGame.validTeam && <Redirect to={`/match/${selectGame.gameNumber}`} />}
             {games}
         </>
     )

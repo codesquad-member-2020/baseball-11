@@ -3,6 +3,7 @@
 #src
 /src/mock
 /src/audios
+/src/assets
 
 #public
 /public/images
@@ -24,7 +25,7 @@ yarn.lock
 /coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store

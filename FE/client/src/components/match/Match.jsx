@@ -1,6 +1,6 @@
 import React from 'react'
-import useSound from '../../hooks/useSound';
 import { useParams } from 'react-router-dom';
+import useSound from '../../hooks/useSound';
 import styled from 'styled-components';
 import ScoreBoard from './scoreBoard/ScoreBoard';
 import MatchLog from './matchLog/MatchLog';
@@ -16,12 +16,12 @@ const MatchWrap = styled.div`
 `;
 
 const Match = () => {
-    const { id } = useParams();
+    const { teamId, gameId } = useParams();
     useSound(MatchBGM, 0.3, 2000);
 
     return (
         <MatchWrap>
-            <MatchStore>
+            <MatchStore {...{ teamId, gameId }}>
                 <ScoreBoard />
                 <MatchLog />
                 <Ground />

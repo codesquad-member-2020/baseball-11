@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import styled from 'styled-components';
 import Hitter from './Hitter';
 import { MatchContext } from '../../../store/MatchStore';
 import effectSound from '../../../utils/effectSound';
 import hitES from '../../../audios/hitES.mp3';
+import homeES from '../../../audios/homeES.mp3';
 
 const GameButtonsWrap = styled.div`
     position: absolute;
@@ -24,9 +25,10 @@ const GameButtonsWrap = styled.div`
 `;
 
 const GameButtons = ({ boxOnHitter, setBoxOnHitter, runners, setRunners }) => {
-    const { baseCount, setBaseCount } = useContext(MatchContext);
-    const hitSound = effectSound(hitES);
-    let setTimeoutHitter;
+    const { baseCount, setBaseCount, ballCountDispatch } = useContext(MatchContext);
+    const hitSound = effectSound(hitES, 0.7);
+    const homeSound = effectSound(homeES, 0.7);
+    const timeoutId = useRef();
 
     const setRunnerAnim = () => {
         const currRunners = [...runners, <Hitter />];
@@ -52,23 +54,36 @@ const GameButtons = ({ boxOnHitter, setBoxOnHitter, runners, setRunners }) => {
         hitSound.play();
         setBoxOnHitter(false);
         setRunnerAnim();
-        setTimeoutHitter = setTimeout(() => setBoxOnHitter(true), 2500);
+        timeoutId.current = setTimeout(() => setBoxOnHitter(true), 2500);
 
-        if (baseCount + 1 >= 4) return; // 득점처리
+        updateBallCount();
+
+        if (baseCount + 1 >= 4) {
+            // 득점처리
+            setTimeout(() => homeSound.play(), 1000);
+            return;
+        }
         setBaseCount(baseCount + 1);
     };
 
+    const handleWaitClick = () => {
+        alert('공 사 중 ㅋ ㅜ');
+    }
+
+    const updateBallCount = () => {
+        ballCountDispatch({ type: 'BALL' });
+        ballCountDispatch({ type: 'STRIKE' });
+        ballCountDispatch({ type: 'OUT' });
+    }
+
     useEffect(() => {
-        return () => {
-            clearTimeout(setTimeoutHitter);
-            setBoxOnHitter(true);
-        }
+        return () => clearTimeout(timeoutId.current);
     }, []);
 
     return (
         <GameButtonsWrap>
             <button onClick={handleSwingClick} disabled={!boxOnHitter}>SWING</button>
-            <button disabled={!boxOnHitter}>WAIT</button>
+            <button onClick={handleWaitClick} disabled={!boxOnHitter}>WAIT</button>
         </GameButtonsWrap>
     )
 }

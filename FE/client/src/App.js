@@ -13,7 +13,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Main} />
         <Route path='/select' component={Select} />
-        <Route path='/match/:id' component={Match} />
+        <Route path='/match/:teamId/:gameId' component={Match} />
         <Route path='/api/githublogin'>
           <Redirect to='/select' />
         </Route>

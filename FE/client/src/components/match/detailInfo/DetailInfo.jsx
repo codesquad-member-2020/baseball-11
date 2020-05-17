@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import ScoreInfo from './ScoreInfo';
 import PlayerInfo from './PlayerInfo';
 import InfoButtonsWrap from './InfoButtons';
@@ -7,20 +7,20 @@ const DetailInfo = () => {
     const defaultState = { scoreInfo: false, playerInfo: false };
     const [showPanel, setShowPanel] = useState(defaultState);
     const [showContent, setShowContent] = useState(defaultState);
-    let setTimeoutPanel;
+    const timeoutId = useRef();
 
     const handleClose = ({ target }) => {
         if (target.dataset.type !== 'contentPanel') return;
         const _showContent = { ...showContent };
         _showContent[target.dataset.content] = false;
-        setShowContent(Object.assign({ ...showContent }, { ..._showContent }));
-        setTimeoutPanel = setTimeout(() => setShowPanel(Object.assign({ ...showPanel }, { ..._showContent })), 1200);
+        setShowContent({ ...showContent, ..._showContent });
+        timeoutId.current = setTimeout(() => setShowPanel({ ...showPanel, ..._showContent }), 1200);
     };
 
     useEffect(() => {
         return () => {
-            clearTimeout(setTimeoutPanel);
-            setShowPanel(defaultState);
+            setShowPanel({ ...showPanel, ...defaultState });
+            return clearTimeout(timeoutId.current);
         }
     }, []);
 

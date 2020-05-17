@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -40,7 +40,12 @@ const Title = styled.div`
 
 const NotFound = () => {
     const [wait, setWait] = useState(true);
-    setTimeout(() => setWait(false), 4000);
+    const timeoutId = useRef();
+    timeoutId.current = setTimeout(() => setWait(false), 4000);
+
+    useEffect(() => {
+        return () => clearTimeout(timeoutId.current);
+    })
 
     return (
         <NotFoundWrap>
