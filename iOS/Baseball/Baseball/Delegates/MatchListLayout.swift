@@ -23,3 +23,10 @@ extension MatchListLayout: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
     }
 }
+
+extension MatchListLayout: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? MatchCell else { return }
+        cell.convexLayer?.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width * 0.9, height: 61)
+    }
+}

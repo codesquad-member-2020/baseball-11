@@ -22,7 +22,7 @@ class MatchCell: UICollectionViewCell {
     @IBOutlet weak var dimView: DimView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+    @IBInspectable var layerColor: UIColor = .clear {
         didSet { configureView() }
     }
     
@@ -33,6 +33,8 @@ class MatchCell: UICollectionViewCell {
     var state: MatchState = .normal {
         didSet { changeCell(to: state) }
     }
+    
+    var convexLayer: ConvexLayer?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,11 +61,10 @@ class MatchCell: UICollectionViewCell {
     }
     
     private func configureView() {
-        contentView.layer.cornerRadius = cornerRadius
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 6
-        layer.shadowOpacity = 0.2
+        convexLayer = ConvexLayer()
+        convexLayer!.backgroundColor = layerColor.cgColor
+        convexLayer!.frame = CGRect(origin: CGPoint.zero, size: frame.size)
+        layer.insertSublayer(convexLayer!, at: 0)
         layer.masksToBounds = false
     }
     

@@ -25,7 +25,7 @@ class NetworkManageable {
         self.session = session
     }
 }
- 
+
 extension NetworkManageable {
     func request<T: Decodable>(_ responseType: T.Type,
                                with request: URLRequest?,

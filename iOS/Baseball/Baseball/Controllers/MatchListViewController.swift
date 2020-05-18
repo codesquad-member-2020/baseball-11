@@ -39,6 +39,10 @@ class MatchListViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    @IBAction func exit(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func configureObserver() {
         observer = NotificationCenter.default.addObserver(forName: .matchesDidUpdate) { [weak self] _ in
             self?.collectionView.reloadData()
